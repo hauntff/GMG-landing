@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+    <script>
+        (function () {
+            const LocoScroll = new LocomotiveScroll({
+                el: document.querySelector("[data-scroll-container]"),
+                smooth: true
+            });
+        })();
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="main-image__container">
+            <img src="img/22.png" id="mainImage">
+        </div>
+        <div class="overlay"></div>
+        <img src="img/main.png" id="GMGLogo">
+        <div class="nav">
+            <button>ABOUT US</button>
+            <button>GAMES</button>
+            <button>CAREERS</button>
+        </div>
+        <!-- Пример кнопок -->
+        <button class="button button1">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.94444 6.05929V0H6.05556V6.05929H0V7.94071H6.05556V14H7.94444V7.94071H14V6.05929H7.94444Z" fill="#2E2E2E">
+                </path>
+            </svg>
+        </button>
+        <button class="button button2">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.94444 6.05929V0H6.05556V6.05929H0V7.94071H6.05556V14H7.94444V7.94071H14V6.05929H7.94444Z" fill="#2E2E2E">
+                </path>
+            </svg>
+        </button>
+        <button class="button button3">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.94444 6.05929V0H6.05556V6.05929H0V7.94071H6.05556V14H7.94444V7.94071H14V6.05929H7.94444Z" fill="#2E2E2E">
+                </path>
+            </svg>
+        </button>
+        <button class="button button4">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.94444 6.05929V0H6.05556V6.05929H0V7.94071H6.05556V14H7.94444V7.94071H14V6.05929H7.94444Z" fill="#2E2E2E">
+                </path>
+            </svg>
+        </button>
+<!--        <button class="button button5">-->
+<!--            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                <path d="M7.94444 6.05929V0H6.05556V6.05929H0V7.94071H6.05556V14H7.94444V7.94071H14V6.05929H7.94444Z" fill="#2E2E2E">-->
+<!--                </path>-->
+<!--            </svg>-->
+<!--        </button>-->
+        <button class="button button6">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.94444 6.05929V0H6.05556V6.05929H0V7.94071H6.05556V14H7.94444V7.94071H14V6.05929H7.94444Z" fill="#2E2E2E">
+                </path>
+            </svg>
+        </button>
+        <button class="button button7"  onclick="changeImage()">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.94444 6.05929V0H6.05556V6.05929H0V7.94071H6.05556V14H7.94444V7.94071H14V6.05929H7.94444Z" fill="#2E2E2E">
+                </path>
+            </svg>
+        </button>
+        <button class="button button8">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.94444 6.05929V0H6.05556V6.05929H0V7.94071H6.05556V14H7.94444V7.94071H14V6.05929H7.94444Z" fill="#2E2E2E">
+                </path>
+            </svg>
+        </button>
+        <button class="button button9">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.94444 6.05929V0H6.05556V6.05929H0V7.94071H6.05556V14H7.94444V7.94071H14V6.05929H7.94444Z" fill="#2E2E2E">
+                </path>
+            </svg>
+        </button>
+    </div>
+    <div class="container second">
+        <div>
+            <h3 class="h3title">About Good Morning Games</h3>
+            <span class="aboutGMG">
+                Top talents across <br> great steppes <br>
+                of Kazakhstan <br>
+                came together <br>
+                to pursue one goal - <br>
+                change mobile <br>
+                gaming industry
+            </span>
+        </div>
+        <div class="img-container">
+            <img src="img/secondImage.png" id="secondImage">
+        </div>
+    </div>
+    <div class="careers">
+        <div class="careers-text">
+            <h3 class="careers-title">qwe</h3>
+            <span class="careers-body">Together, we <br>will create <br>
+                high-quality <br> mobile games <br> that will be <br> played for <br> years.</span>
+            <button class="send-CV-button">qweqwe</button>
+        </div>
+        <div class="team-image">
+            <img src="img/teamPhoto.png">
+        </div>
+    </div>
+    <div>
+        <img src="img/22.png" class="mainImage">
+    </div>
+</body>
+</html>
+<style>
+    @font-face {
+        font-family: 'Mikadoo';
+        src: url('/fonts/MikadoUltra.woff') format('woff'); /* Additional formats for better browser compatibility */
+        /* You can include more src declarations if you have different font formats */
+    }
+    @font-face {
+        font-family: 'MikadooLight';
+        src: url('/fonts/MikadoLight.woff') format('woff'); /* Additional formats for better browser compatibility */
+        /* You can include more src declarations if you have different font formats */
+    }
+    .main-image__container{
+        position: relative;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        height: fit-content;
+    }
+
+    .container {
+        position: relative;
+        width: 100%;
+    }
+    .overlay {
+        position: absolute;
+        top: 40px; /* Расстояние от верхнего края картинки */
+        left: 34px; /* Расстояние от левого края картинки */
+        right: 34px; /* Расстояние от правого края картинки */
+        bottom: 43px; /* Расстояние от нижнего края картинки */
+        border: 2px solid white; /* Белая граница */
+        border-radius: 15px;
+    }
+    .nav {
+        position: absolute;
+        left: 62.8%;
+        top: 9%;
+        display: flex;
+        justify-content: space-around;
+        width: 31vw;
+    }
+
+    .nav button{
+        font-family: 'Mikadoo';
+        font-weight: bold;
+        font-size: 18px;
+        color: #ffffff;
+        background: #181818;
+        padding: 10px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        cursor: pointer;
+        border: 1px solid #181818; /* Внешний круг */
+        overflow: hidden; /* Обрезаем содержимое внутри элемента */
+
+    }
+    #mainImage {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .mainImage {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .container{
+        position: relative;
+        border: 0;
+    }
+    #GMGLogo{
+        position: absolute;
+        width: 16vw;
+        height: 8vw;
+        top: 7.8%;
+        left: 5.6%;
+    }
+    .button::after{
+        content: '+';
+        width: 2.5vw;
+        height: 2.5vw;
+        position: absolute;
+        top: calc(50% - 1.25vw);
+        left: calc(50% - 1.25vw);
+        background: white;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #2E2E2E;
+    }
+    .button:hover{
+        opacity: 1;
+    }
+    .button {
+        z-index: 2;
+        font-family: inherit;
+        line-height: 1.15;
+        margin: 0;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1.5vw; /* Размер шрифта будет меняться в зависимости от ширины экрана */
+        cursor: pointer;
+        width: 42px;
+        height: 42px;
+        background: #2E2E2E;
+        transition: .2s ease-in;
+        border-radius: 50%; /* Делаем круглый элемент */
+        background-color: transparent;
+        border: 6px solid #2E2E2E; /* Внешний круг */
+        overflow: hidden; /* Обрезаем содержимое внутри элемента */
+        position: absolute;
+    }
+
+    .button1{
+        left: 4.5%;
+        top: 49%;
+    }
+    .button2 {
+        top: 30.5%;
+        left: 19.7%;
+    }
+    svg{
+        fill: currentColor;
+    }
+    .button3 {
+        left: 21.5%;
+        top: 55.6%;
+    }
+    .button4 {
+        left: 45%;
+        top: 66%;
+    }
+    .button6{
+        left: 55%;
+        top: 47%;
+    }
+    .button7 {
+        top: 30%;
+        left: 79.8%;
+    }
+
+    .button8 {
+        top: 50%;
+        left: 80.8%;
+    }
+
+    .button9 {
+        top: 63%;
+        left: 92.8%;
+    }
+    @media screen and (max-width: 600px) {
+        /* При необходимости добавьте дополнительные стили для мобильных устройств */
+        .button {
+            font-size: 14px;
+        }
+    }
+
+    #secondImage{
+        display: block;
+    }
+
+    .second{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background: #FF7506;
+        gap: 0.5vw;
+    }
+    .img-container{
+        position: relative;
+        top: -3vw;
+        margin-bottom: -3vw;
+    }
+    .aboutGMG{
+        font-size: 49px;
+        font-family: 'Mikadoo';
+        position: relative;
+        line-height: 3vw;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        top: 0.5vw;
+    }
+    br{
+        margin: 0;
+        padding: 0;
+    }
+    .h3title{
+        font-size: 32px;
+        color:#FFFFFF;
+        font-family: 'MikadooLight';
+        font-weight: normal;
+    }
+
+    .careers{
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .careers-text{
+        width: 100%;
+        background: #FFFFFF;
+        flex-basis: 0;
+        flex-grow: 1;
+        overflow: hidden;
+        border-radius: 0 0 120px 0;
+    }
+    .team-image{
+        object-fit: cover;
+        border-radius: 120px 0 0 0;
+        overflow: hidden;
+    }
+    .team-image img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    .careers-body{
+        font-size: 49px;
+        font-family: 'Mikadoo';
+        position: relative;
+        line-height: 3vw;
+        color: #000000;
+        text-transform: uppercase;
+        top: 0.5vw;
+    }
+</style>
+<script>
+    var images = ['img/22.png', 'img/11.png'];
+    var currentIndex = 0;
+
+    function changeImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        document.getElementById('mainImage').src = images[currentIndex];
+    }
+</script>
