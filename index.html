@@ -149,9 +149,93 @@
             Copyright @ 2023 - Good Morning Games
         </span>
     </div>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-text">
+                <div class="modal-header">
+                    <h2>MEET <br> OUT PETS</h2>
+                </div>
+                <div class="modal-note">
+                    <img src="/img/note.png">
+                    <p class="modal-name-text">LOLA</p>
+                </div>
+            </div>
+            <div class="modal-image">
+                <img src="img/petLola.png">
+            </div>
+
+        </div>
+        <button class="button" id="closeModalBtn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.94444 6.05929V0H6.05556V6.05929H0V7.94071H6.05556V14H7.94444V7.94071H14V6.05929H7.94444Z" fill="#2E2E2E">
+                </path>
+            </svg>
+        </button>
+        <div class="overlay"></div>
+    </div>
 </body>
 </html>
 <style>
+    .modal {
+        display: none; /* Начально скрываем модальное окно */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("/img/modalBackground.png");
+        background-color: rgb(255,117,6);/* Полупрозрачный фон */
+        z-index: 1000; /* Выше остальных элементов */
+    }
+
+    .modal-content {
+        position: absolute;
+        width: 100vw;
+        height: 26vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border-radius: 115px 0 115px 0;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #closeModalBtn {
+        left: 95.5%;
+        top: 5%;
+    }
+    h2{
+        margin: 0;
+    }
+    .modal-note{
+        color:#FFFFFF;
+        font-size: 66px;
+        z-index: 100;
+        padding-left: 155px;
+    }
+    .modal-header{
+        padding-left: 170px;
+        font-size: 70px;
+        font-family: 'Mikadoo';
+        line-height: 0.9;
+        padding-top: 60px;
+    }
+    .modal-name-text {
+        position: absolute;
+        transform: rotate(-2.5deg);
+        top: 51%;
+        font-family: 'Mikadoo';
+        left: 15%;
+    }
+
+    .modal-image {
+        border-radius: 115px 0 115px 0;
+        position: absolute;
+        left: 57%;
+        top: -15%;
+    }
+
     @font-face {
         font-family: 'Mikadoo';
         src: url('/fonts/MikadoUltra.woff') format('woff'); /* Additional formats for better browser compatibility */
@@ -527,6 +611,8 @@
         font-size: 10px;
         color: #9F9F9F;
     }
+
+
 </style>
 <script>
     var images = ['img/Day.png', 'img/night.png'];
@@ -551,13 +637,17 @@
         }
 
     }
-    document.getElementById('second').addEventListener('click', function() {
-        var button = this;
 
-        if (button.style.backgroundColor === 'rgb(20, 24, 95)') { // Проверяем текущий цвет фона кнопки
-            button.style.backgroundColor = '#FF7506'; // Устанавливаем первоначальный цвет
-        } else {
-            button.style.backgroundColor = '#14185F'; // Изменяем цвет фона кнопки
-        }
+
+    const openModalBtn = document.querySelector('.button8');
+    const modal = document.getElementById('modal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    openModalBtn.addEventListener('click', function() {
+        modal.style.display = 'block'; // Показываем модальное окно при клике на кнопку
+    });
+
+    closeModalBtn.addEventListener('click', function() {
+        modal.style.display = 'none'; // Скрываем модальное окно при клике на кнопку "Close Modal"
     });
 </script>
