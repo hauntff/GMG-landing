@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Good Morning Games</title>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
     <script>
         (function () {
@@ -17,14 +17,14 @@
 <body>
     <div class="container">
         <div class="main-image__container">
-            <img src="img/22.png" id="mainImage">
+            <img src="img/Day.png" id="mainImage">
         </div>
         <div class="overlay"></div>
         <img src="img/main.png" id="GMGLogo">
         <div class="nav">
-            <button>ABOUT US</button>
-            <button>GAMES</button>
-            <button>CAREERS</button>
+            <button><a href="#second">ABOUT US</a></button>
+            <button><a href="games.html">GAMES</a></button>
+            <button><a href="#careers">CAREERS</a></button>
         </div>
         <!-- Пример кнопок -->
         <button class="button button1">
@@ -82,7 +82,7 @@
             </svg>
         </button>
     </div>
-    <div class="container second">
+    <div class="container second" id="second">
         <div>
             <h3 class="h3title">About Good Morning Games</h3>
             <span class="aboutGMG">
@@ -98,19 +98,56 @@
             <img src="img/secondImage.png" id="secondImage">
         </div>
     </div>
-    <div class="careers">
+    <div class="careers" id="careers">
         <div class="careers-text">
-            <h3 class="careers-title">qwe</h3>
+            <h3 class="careers-title">Careers</h3>
             <span class="careers-body">Together, we <br>will create <br>
                 high-quality <br> mobile games <br> that will be <br> played for <br> years.</span>
-            <button class="send-CV-button">qweqwe</button>
+            <button class="send-CV-button">Send Your CV</button>
         </div>
         <div class="team-image">
-            <img src="img/teamPhoto.png">
+            <img src="img/teamPhoto.png" id="teamPhoto">
         </div>
     </div>
-    <div>
-        <img src="img/22.png" class="mainImage">
+    <div class="contacts">
+        <img src="img/orangeImage.png" class="mainImage" id="footerImage">
+        <div class="social">
+            <div class="social-title">
+                FOLLOW US
+            </div>
+            <div class="social-grid">
+                <a href="" class="item">
+                    <img src="/img/facebook.svg" alt="">
+                </a>
+                <a href="" class="item">
+                    <img src="/img/instagram.svg" alt="">
+                </a>
+                <a href="" class="item">
+                    <img src="/img/x.svg" alt="">
+                </a>
+                <a href="" class="item">
+                    <img src="/img/in.svg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="links">
+            <div class="links-grid">
+                <a href="">About Us</a>
+                <a href="">Games</a>
+                <a href="">Careers</a>
+                <a href="" class="term">Terms</a>
+                <a href="" class="term">Privacy</a>
+            </div>
+            <span class="email">
+                support@gmg.studio
+            </span>
+        </div>
+    </div>
+    <div class="footer">
+        <img src="img/main.png" class="logo">
+        <span class="copyright">
+            Copyright @ 2023 - Good Morning Games
+        </span>
     </div>
 </body>
 </html>
@@ -160,7 +197,12 @@
         width: 31vw;
     }
 
-    .nav button{
+    h3{
+        font-weight: normal;
+        font-size: 32px;
+    }
+
+    .nav button, .send-CV-button{
         font-family: 'Mikadoo';
         font-weight: bold;
         font-size: 18px;
@@ -216,6 +258,10 @@
     }
     .button:hover{
         opacity: 1;
+    }
+    a{
+        text-decoration: none;
+        color:#FFFFFF;
     }
     .button {
         z-index: 2;
@@ -334,6 +380,15 @@
         flex-grow: 1;
         overflow: hidden;
         border-radius: 0 0 120px 0;
+        padding-left: 60px;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .send-CV-button{
+        margin-top: 50px;
+        width: fit-content;
+        padding: 10px 60px;
     }
     .team-image{
         object-fit: cover;
@@ -355,13 +410,138 @@
         text-transform: uppercase;
         top: 0.5vw;
     }
+    .contacts {
+        position: relative;
+        width: 100%;
+    }
+
+    .contacts::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .social{
+        position: absolute;
+        top: 70%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2.3vw;
+        z-index: 2;
+    }
+    .social-title{
+        font-family: 'Mikadoo';
+        font-size: 24px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .social-grid{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2.3vw;
+    }
+    .social-grid .item{
+        width: 4.9vw;
+        height: 4.9vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #FFFFFF;
+        border-radius: 50%;
+    }
+    .links{
+        position: absolute;
+        top: 93%;
+        z-index: 2;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .links-grid{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 17px;
+        margin-left: 63px;
+    }
+    .links-grid a{
+        font-family: 'Mikadoo';
+        font-size: 17px;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+    .links-grid a.term{
+        font-family: 'MikadooLight';
+    }
+    .email{
+        margin-right: 63px;
+        font-family: 'MikadooLight';
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 33px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .footer{
+        position: relative;
+        z-index: 2;
+        background: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 64px;
+        padding: 32px;
+    }
+    .footer .logo{
+        width: 10.69vw;
+        height: 4.9vw;
+    }
+    .copyright{
+        font-family: 'MikadooLight';
+        font-size: 10px;
+        color: #9F9F9F;
+    }
 </style>
 <script>
-    var images = ['img/22.png', 'img/11.png'];
+    var images = ['img/Day.png', 'img/night.png'];
+    var images2 = ['img/secondImage.png', 'img/NightGirl.png'];
+    var images3 = ['img/teamPhoto.png', 'img/teamPhotoSecond.png'];
+    var images4 = ['img/orangeImage.png', 'img/blueImage.png'];
     var currentIndex = 0;
 
     function changeImage() {
         currentIndex = (currentIndex + 1) % images.length;
         document.getElementById('mainImage').src = images[currentIndex];
+        document.getElementById('secondImage').src = images2[currentIndex];
+        document.getElementById('teamPhoto').src = images3[currentIndex];
+        document.getElementById('footerImage').src = images4[currentIndex];
+        if (currentIndex % 2)
+        {
+            document.getElementById('second').style.backgroundColor = '#14185F';
+        }
+        else {
+            document.getElementById('second').style.backgroundColor = '#FF7506';
+
+        }
+
     }
+    document.getElementById('second').addEventListener('click', function() {
+        var button = this;
+
+        if (button.style.backgroundColor === 'rgb(20, 24, 95)') { // Проверяем текущий цвет фона кнопки
+            button.style.backgroundColor = '#FF7506'; // Устанавливаем первоначальный цвет
+        } else {
+            button.style.backgroundColor = '#14185F'; // Изменяем цвет фона кнопки
+        }
+    });
 </script>
