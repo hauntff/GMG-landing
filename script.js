@@ -106,6 +106,22 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.style.overflow = 'scroll';
     });
 
+    var openModalBtn3 = document.querySelector('.button2');
+    var modal3 = document.getElementById('modal3');
+    var closeModalBtn3 = document.getElementById('closeModalBtn3');
+
+    openModalBtn3.addEventListener('click', function() {
+        modal3.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    });
+
+    closeModalBtn3.addEventListener('click', function() {
+        modal3.classList.remove('show');
+        document.body.style.overflow = 'scroll';
+    });
+
+
+
     //Модалка для животных
     var currentIndex = 0;
 
@@ -133,6 +149,32 @@ document.addEventListener("DOMContentLoaded", function() {
             document.querySelector('.modal-name-text').textContent = modalPetsNames[currentIndex];
         }, 0);
     }
+
+    var currentIndex3 = 0;
+
+    var modalTeamPhotos = ['teamPhotoKemal.png', 'teamPhotoTony.png', 'teamPhotoGirls'];
+    var next3 = document.getElementById("nextBtn3");
+    var prev3 = document.getElementById("prevBtn3");
+    var holder3 = document.getElementById("teamPhotoModal");
+
+    next3.addEventListener('click', function() {
+        currentIndex3 = (currentIndex3 + 1 + modalTeamPhotos.length) % modalTeamPhotos.length;
+        updateTeamPhotosSlide();
+    });
+
+    prev3.addEventListener('click', function() {
+        currentIndex3 = (currentIndex3 - 1 + modalTeamPhotos.length) % modalTeamPhotos.length;
+        updateTeamPhotosSlide();
+    });
+
+    function updateTeamPhotosSlide() {
+        holder3.classList.remove('fade-animation');
+        setTimeout(function() {
+            holder3.src = 'img/' + modalTeamPhotos[currentIndex3];
+            holder3.classList.add('fade-animation');
+        }, 0);
+    }
+
 
 
     //Модалка для людей
@@ -201,5 +243,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("fifth-favorite").innerText = modalFifth[currentIndex2];
         }, 0);
     }
+
+
 
 });

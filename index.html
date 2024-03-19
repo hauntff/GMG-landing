@@ -273,9 +273,97 @@
         </button>
         <div class="overlay"></div>
     </div>
+
+    <div class="modal custom-modal slides fade-animation" id="modal3">
+        <div class="custom-modal-content" >
+            <div class="custom-carousel-container">
+                <div class="custom-slides">
+                    <div class="custom-slide">
+                        <img src="img/teamPhotoKemal.png" id="teamPhotoModal" class="fade-animation">
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button id="prevBtn3" class="prevBtn">
+                    <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1835 23.5227L0.492063 13.1523C-0.16402 12.5159 -0.164019 11.4841 0.492063 10.8477L11.1835 0.477286C11.8396 -0.159097 12.9033 -0.159097 13.5594 0.477286C14.2155 1.11367 14.2155 2.14545 13.5594 2.78183L5.73588 10.3704L26.32 10.3704C27.2478 10.3704 28 11.1 28 12C28 12.9 27.2478 13.6296 26.32 13.6296L5.73588 13.6296L13.5594 21.2182C14.2155 21.8546 14.2155 22.8863 13.5594 23.5227C12.9033 24.1591 11.8396 24.1591 11.1835 23.5227Z" fill="black"/>
+                    </svg>
+                </button>
+                <button id="nextBtn3" class="nextBtn">
+                    <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8165 0.477284L27.5079 10.8477C28.164 11.4841 28.164 12.5159 27.5079 13.1523L16.8165 23.5227C16.1604 24.1591 15.0967 24.1591 14.4406 23.5227C13.7845 22.8863 13.7845 21.8545 14.4406 21.2182L22.2641 13.6296L1.68 13.6296C0.752164 13.6296 2.2555e-06 12.9 2.09815e-06 12C1.94079e-06 11.1 0.752163 10.3704 1.68 10.3704L22.2641 10.3704L14.4406 2.78183C13.7845 2.14545 13.7845 1.11367 14.4406 0.477284C15.0967 -0.159098 16.1604 -0.159098 16.8165 0.477284Z" fill="black"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <button class="button" id="closeModalBtn3">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.94444 6.05929V0H6.05556V6.05929H0V7.94071H6.05556V14H7.94444V7.94071H14V6.05929H7.94444Z" fill="#2E2E2E">
+                </path>
+            </svg>
+        </button>
+        <div class="overlay"></div>
+    </div>
 </body>
 </html>
 <style>
+
+    .custom-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    .custom-modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    .custom-carousel-container {
+        max-width: 500px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .custom-slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .custom-slide {
+        min-width: 100%;
+        overflow: hidden;
+    }
+
+    .custom-slide img {
+        width: 100%;
+        height: auto;
+    }
+
+
+
+    .carousel-controls button {
+        padding: 5px 10px;
+        margin: 0 5px;
+        background-color: #FF7506;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+
     .list{
         display: flex;
         justify-content: flex-start;
@@ -420,7 +508,7 @@
         flex-direction: row-reverse;
     }
 
-    #closeModalBtn, #closeModalBtn1, #closeModalBtn2{
+    #closeModalBtn, #closeModalBtn1, #closeModalBtn2, #closeModalBtn3 {
         left: 95.5%;
         top: 5%;
     }
