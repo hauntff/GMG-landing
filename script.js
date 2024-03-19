@@ -17,26 +17,26 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.body.classList.remove('dark');
                 overlay.classList.remove('dark');
             }
-    
+
             localStorage.setItem('theme', theme);
         } else {
             console.error("Body element not found");
         }
     }
-   
+
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         setTheme(savedTheme);
     }
-    
+
     document.getElementById('themeButton').addEventListener('click', function() {
         const currentTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
-        setTheme(currentTheme); 
+        setTheme(currentTheme);
     });
 
     window.addEventListener('beforeunload', function() {
         const currentTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
-        localStorage.setItem('theme', currentTheme); 
+        localStorage.setItem('theme', currentTheme);
     });
 
 
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("footerImage").src = "img/orangeImage.png"
         }
     }
-    
+
     updateImage();
 
     setInterval(function() {
@@ -64,62 +64,142 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     // Открытие и закрытие модального окна
-    const openModalBtn = document.querySelector('.button8');
-    const modal = document.getElementById('modal');
-    const closeModalBtn = document.getElementById('closeModalBtn');
+    var openModalBtn = document.querySelector('.button8');
+    var modal = document.getElementById('modal');
+    var closeModalBtn = document.getElementById('closeModalBtn');
 
     openModalBtn.addEventListener('click', function() {
-        modal.style.display = 'block';
+        modal.classList.add('show');
         document.body.style.overflow = 'hidden';
     });
 
     closeModalBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'initial';
+        modal.classList.remove('show');
+        document.body.style.overflow = 'scroll';
     });
 
-    const openModalBtn1 = document.querySelector('.button4');
-    const modal1 = document.getElementById('modal1');
-    const closeModalBtn1 = document.getElementById('closeModalBtn1');
+    var openModalBtn1 = document.querySelector('.button9');
+    var modal1 = document.getElementById('modal1');
+    var closeModalBtn1 = document.getElementById('closeModalBtn1');
 
     openModalBtn1.addEventListener('click', function() {
-        modal1.style.display = 'block';
+        modal1.classList.add('show');
         document.body.style.overflow = 'hidden';
     });
 
     closeModalBtn1.addEventListener('click', function() {
-        modal1.style.display = 'none';
-        document.body.style.overflow = 'initial';
+        modal1.classList.remove('show');
+        document.body.style.overflow = 'scroll';
     });
 
+    var openModalBtn2 = document.querySelector('.button4');
+    var modal2 = document.getElementById('modal2');
+    var closeModalBtn2 = document.getElementById('closeModalBtn2');
+
+    openModalBtn2.addEventListener('click', function() {
+        modal2.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    });
+
+    closeModalBtn2.addEventListener('click', function() {
+        modal2.classList.remove('show');
+        document.body.style.overflow = 'scroll';
+    });
+
+    //Модалка для животных
+    var currentIndex = 0;
 
     var modalPetsImages = ['petLola.png', 'petMallow.png', 'petLa.png', 'petVintik.png']
-
-    var holder =  document.getElementById("petsImages");
+    var modalPetsNames = ['Lola', 'Mallow', 'La', 'Vintik']
     var next = document.getElementById("nextBtn")
     var prev = document.getElementById("prevBtn")
+    var holder =  document.getElementById("petsImages");
 
-    var image_count = 1;
-    next.addEventListener('click', function (){
-        console.log("qweqweq")
-        holder.src = modalPetsImages[image_count]
-        if (image_count >= modalPetsImages.length-1){
-            image_count = 0;
-        }else{
-            image_count ++;
-        }
-    })
-    prev.addEventListener('click', function (){
-        holder.src = modalPetsImages[image_count]
-        if (image_count === 0){
-            image_count = modalPetsImages.length-1;
-        }else{
-            image_count --;
-        }
-    })
+    next.addEventListener('click', function() {
+        currentIndex = (currentIndex + 1 + modalPetsImages.length) % modalPetsImages.length;
+        updateSlide();
+    });
+
+    prev.addEventListener('click', function() {
+        currentIndex = (currentIndex - 1 + modalPetsImages.length) % modalPetsImages.length;
+        updateSlide();
+    });
+
+    function updateSlide() {
+        holder.classList.remove('fade-animation');
+        setTimeout(function() {
+            holder.src = 'img/' + modalPetsImages[currentIndex];
+            holder.classList.add('fade-animation');
+            document.querySelector('.modal-name-text').textContent = modalPetsNames[currentIndex];
+        }, 0);
+    }
+
+
+    //Модалка для людей
+    var currentIndex1 = 0;
+
+    var modalPeopleImages = ['Yelzhan.png', 'Kemal.png', 'Tony.png', 'Nurs.png',
+        'Roma.png', 'Anel.png', 'Dari.png', 'Sabira.png'];
+    var modalPeopleNames = ['Yelzhan', 'Kemal', 'Tony', 'Nursultan', 'Roman', 'Anel', 'Dariga', 'Sabira']
+
+    var next1 = document.getElementById("nextBtn1");
+    var prev1 = document.getElementById("prevBtn1");
+    var holder1 = document.getElementById("peopleImages");
+
+    next1.addEventListener('click', function() {
+        currentIndex1 = (currentIndex1 + 1) % modalPeopleImages.length;
+        updatePeopleSlide();
+    });
+
+    prev1.addEventListener('click', function() {
+        currentIndex1 = (currentIndex1 - 1 + modalPeopleImages.length) % modalPeopleImages.length;
+        updatePeopleSlide();
+    });
+
+    function updatePeopleSlide() {
+        holder1.classList.remove('fade-animation');
+        setTimeout(function() {
+            holder1.src = 'img/' + modalPeopleImages[currentIndex1];
+            holder1.classList.add('fade-animation');
+            document.querySelector('.modal-header.reverse h2').textContent = modalPeopleNames[currentIndex1];
+        }, 0);
+    }
+
+    var currentIndex2 = 0;
+
+    var modalFavoritesHeaders = ['FAVORITE GAMES', 'MOVIES & TV', 'FAVORITE FOOD', 'FAVORITE SNACKS',
+        'FAVORITE HOBBIES', 'FAVORITE DRINKS'];
+    var modalFirst = ['FC 24', 'Kemal', 'Tony', 'Nursultan', 'Roman', 'Anel']
+    var modalSecond = ['DOTA 2', 'Kemal', 'Tony', 'Nursultan', 'Roman', 'Anel']
+    var modalThird = ['CS:GO', 'Kemal', 'Tony', 'Nursultan', 'Roman', 'Anel']
+    var modalFourth = ['GTA', 'Kemal', 'Tony', 'Nursultan', 'Roman', 'Anel']
+    var modalFifth = ['Minecraft', 'Kemal', 'Tony', 'Nursultan', 'Roman', 'Anel']
+
+    var next2 = document.getElementById("nextBtn2");
+    var prev2 = document.getElementById("prevBtn2");
+    var holder2 = document.getElementById("favorites-header");
+
+    next2.addEventListener('click', function() {
+        currentIndex2 = (currentIndex2 + 1) % modalFavoritesHeaders.length;
+        updateFavoriteSlide();
+    });
+
+    prev2.addEventListener('click', function() {
+        currentIndex2 = (currentIndex2 - 1 + modalFavoritesHeaders.length) % modalFavoritesHeaders.length;
+        updateFavoriteSlide();
+    });
+
+    function updateFavoriteSlide() {
+        holder2.classList.remove('fade-animation');
+        setTimeout(function() {
+            holder2.innerHTML =  modalFavoritesHeaders[currentIndex2];
+            holder2.classList.add('fade-animation');
+            document.getElementById("first-favorite").innerText = modalFirst[currentIndex2];
+            document.getElementById("second-favorite").innerText = modalSecond[currentIndex2];
+            document.getElementById("third-favorite").innerText = modalThird[currentIndex2];
+            document.getElementById("forth-favorite").innerText = modalFourth[currentIndex2];
+            document.getElementById("fifth-favorite").innerText = modalFifth[currentIndex2];
+        }, 0);
+    }
+
 });
-
-
-
-
-// Function to increase image count

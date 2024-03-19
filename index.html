@@ -150,8 +150,9 @@
             Copyright @ 2024 - GMG
         </span>
     </div>
-    <div class="modal slides" id="modal">
-        <div class="modal-content" >
+    <div class="modal slides fade-animation" id="modal">
+        <div class="modal-content">
+            <div class="slide">
                 <div class="modal-text">
                     <div class="modal-header">
                         <h2>MEET <br> OUT PETS</h2>
@@ -162,50 +163,9 @@
                     </div>
                 </div>
                 <div class="modal-image">
-                    <img src="img/petLola.png" id="petsImages">
+                    <img src="img/petLola.png" id="petsImages" class="fade-animation">
                 </div>
-<!--            <div class="slide">-->
-<!--                <div class="modal-text">-->
-<!--                    <div class="modal-header">-->
-<!--                        <h2>MEET <br> OUT PETS</h2>-->
-<!--                    </div>-->
-<!--                    <div class="modal-note">-->
-<!--                        <img src="/img/note.png">-->
-<!--                        <p class="modal-name-text">MALLOW</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="modal-image">-->
-<!--                    <img src="img/petMallow.png">-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="slide">-->
-<!--                <div class="modal-text">-->
-<!--                    <div class="modal-header">-->
-<!--                        <h2>MEET <br> OUT PETS</h2>-->
-<!--                    </div>-->
-<!--                    <div class="modal-note">-->
-<!--                        <img src="/img/note.png">-->
-<!--                        <p class="modal-name-text">LA</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="modal-image">-->
-<!--                    <img src="img/petLa.png">-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="slide">-->
-<!--                <div class="modal-text">-->
-<!--                    <div class="modal-header">-->
-<!--                        <h2>MEET <br> OUT PETS</h2>-->
-<!--                    </div>-->
-<!--                    <div class="modal-note">-->
-<!--                        <img src="/img/note.png">-->
-<!--                        <p class="modal-name-text">VINTIK</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="modal-image">-->
-<!--                    <img src="img/petVintik.png">-->
-<!--                </div>-->
-<!--            </div>-->
+            </div>
             <div class="slider-controls">
                 <button id="prevBtn" class="prevBtn">
                     <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -229,52 +189,14 @@
         <div class="overlay"></div>
     </div>
 
-    <div class="modal slides" id="modal1">
+    <div class="modal slides fade-animation" id="modal1">
         <div class="modal-content" alt="Slide 1">
             <div class="slide">
-                <div class="modal-header">
-                    <h2>MEET <br> OUT PETS</h2>
+                <div class="modal-image reverse">
+                    <img src="img/Yelzhan.png" id="peopleImages" class="fade-animation reverse">
                 </div>
-                <div class="modal-text">
-                    <div class="modal-note">
-                        <p class="modal-name-text"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="slide">
-                <div class="modal-text">
-                    <div class="modal-header">
-                        <h2>MEET <br> OUT PETS</h2>
-                    </div>
-                    <div class="modal-note">
-                        <p class="modal-name-text">MALLOW</p>
-                    </div>
-                </div>
-                <div class="modal-image">
-                </div>
-            </div>
-            <div class="slide">
-                <div class="modal-text">
-                    <div class="modal-header">
-                        <h2>MEET <br> OUT PETS</h2>
-                    </div>
-                    <div class="modal-note">
-                        <p class="modal-name-text">LA</p>
-                    </div>
-                </div>
-                <div class="modal-image">
-                </div>
-            </div>
-            <div class="slide">
-                <div class="modal-text">
-                    <div class="modal-header">
-                        <h2>MEET <br> OUT PETS</h2>
-                    </div>
-                    <div class="modal-note">
-                        <p class="modal-name-text">VINTIK</p>
-                    </div>
-                </div>
-                <div class="modal-image">
+                <div class="modal-header reverse">
+                    <h2>Yelzhan</h2>
                 </div>
             </div>
             <div class="slider-controls">
@@ -299,23 +221,150 @@
         </button>
         <div class="overlay"></div>
     </div>
+
+    <div class="modal slides fade-animation" id="modal2">
+        <div class="modal-content" alt="Slide 1">
+            <div class="slide">
+                <div class="modal-header favorites" style="color: #FFFFFF;top: -18vw;left: 5vw; font-size: 47px">
+                    <h2 id="favorites-header">FAVORITE GAMES</h2>
+                </div>
+                <div class="favorite-hobbies">
+                    <div class="list">
+                        <div class="list-number">1</div>
+                        <div id="first-favorite">FC 24</div>
+                    </div>
+                    <div class="list">
+                        <div class="list-number">2</div>
+                        <div id="second-favorite">DOTA 2</div>
+                    </div>
+                    <div class="list">
+                        <div class="list-number">3</div>
+                        <div id="third-favorite">CS:GO</div>
+                    </div>
+                    <div class="list">
+                        <div class="list-number">4</div>
+                        <div id="forth-favorite">GTA</div>
+                    </div>
+                    <div class="list">
+                        <div class="list-number">5</div>
+                        <div id="fifth-favorite">MINECRAFT</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button id="prevBtn2" class="prevBtn">
+                    <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1835 23.5227L0.492063 13.1523C-0.16402 12.5159 -0.164019 11.4841 0.492063 10.8477L11.1835 0.477286C11.8396 -0.159097 12.9033 -0.159097 13.5594 0.477286C14.2155 1.11367 14.2155 2.14545 13.5594 2.78183L5.73588 10.3704L26.32 10.3704C27.2478 10.3704 28 11.1 28 12C28 12.9 27.2478 13.6296 26.32 13.6296L5.73588 13.6296L13.5594 21.2182C14.2155 21.8546 14.2155 22.8863 13.5594 23.5227C12.9033 24.1591 11.8396 24.1591 11.1835 23.5227Z" fill="black"/>
+                    </svg>
+                </button>
+                <button id="nextBtn2" class="nextBtn">
+                    <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8165 0.477284L27.5079 10.8477C28.164 11.4841 28.164 12.5159 27.5079 13.1523L16.8165 23.5227C16.1604 24.1591 15.0967 24.1591 14.4406 23.5227C13.7845 22.8863 13.7845 21.8545 14.4406 21.2182L22.2641 13.6296L1.68 13.6296C0.752164 13.6296 2.2555e-06 12.9 2.09815e-06 12C1.94079e-06 11.1 0.752163 10.3704 1.68 10.3704L22.2641 10.3704L14.4406 2.78183C13.7845 2.14545 13.7845 1.11367 14.4406 0.477284C15.0967 -0.159098 16.1604 -0.159098 16.8165 0.477284Z" fill="black"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <button class="button" id="closeModalBtn2">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.94444 6.05929V0H6.05556V6.05929H0V7.94071H6.05556V14H7.94444V7.94071H14V6.05929H7.94444Z" fill="#2E2E2E">
+                </path>
+            </svg>
+        </button>
+        <div class="overlay"></div>
+    </div>
 </body>
 </html>
 <style>
-    html {
-        scroll-behavior: smooth;
+    .list{
+        display: flex;
+        justify-content: flex-start;
+        align-content: stretch;
+        align-items: baseline;
+        font-family: 'Mikadoo';
+        font-size: 50px;
+    }
+    .favorite-hobbies {
+        padding-right: 30vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 26vw;
     }
 
-    .slide{
-        animation-name: fade;
-        animation-duration: 1.5s;
-    }
-    .prevBtn, .nextBtn{
+    .list-number {
         border-radius: 50%;
-        padding: 10px;
+        padding: 9px;
+        border: 3px solid #181818;
+        width: 40px;
+        height: 40px;
+        line-height: 0.8;
+        text-align: center;
+        margin-right: 30px;
+        
+    }
+
+    html::-webkit-scrollbar {
+        width: 10px;               /* width of the entire scrollbar */
+    }
+
+    html::-webkit-scrollbar-track {
+        background: #FFFFFF;
+        opacity: 0.66/* color of the tracking area */
+    }
+
+    html::-webkit-scrollbar-thumb {
+        background-color: #181818;    /* color of the scroll thumb */
+        border-radius: 14px;       /* roundness of the scroll thumb */
+        border: 3px solid #FFFFFF;  /* creates padding around scroll thumb */
+    }
+
+
+    .slide{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #petsImages {
+        position: relative;
+        right: 10vw;
+    }
+
+    .fade-animation{
+        animation: fade 0.3s ease-in-out;
+    }
+    .fade-animation.reverse{
+        position: relative;
+        right: 0;
+        left: 10vw;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: 0;
+            display: none;
+        }
+        to {
+            opacity: 1;
+            display: flex;
+        }
+    }
+
+    .prevBtn, .nextBtn{
+        position: absolute;
+        top: 50%;
+        border-radius: 50%;
+        padding: 0.8vw;
         border: none;
-        position: fixed;
         box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
     }
 
     .prevBtn{
@@ -327,32 +376,51 @@
         top: 47%;
     }
 
+
     .modal {
-        display: none; 
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         background-image: url("/img/modalBackground.png");
-        background-color: rgb(255,117,6);
-        z-index: 1000; 
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-color: rgba(255, 117, 6, 1);
+        z-index: 1000;
+        opacity: 0;
+        transition: all 0.3s ease;
+        visibility: hidden;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal.show {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.5s ease;
     }
 
     .modal-content {
-        position: absolute;
-        width: 100vw;
+        width: 100%;
         height: 26vw;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         background-color: white;
         border-radius: 115px 0 115px 0;
         display: flex;
         flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
     }
 
-    #closeModalBtn, #closeModalBtn1{
+    .modal-content.reverse {
+        flex-direction: row-reverse;
+    }
+
+    #closeModalBtn, #closeModalBtn1, #closeModalBtn2{
         left: 95.5%;
         top: 5%;
     }
@@ -363,30 +431,34 @@
         color:#FFFFFF;
         font-size: 66px;
         z-index: 100;
-        padding-left: 155px;
+        position: relative;
+        left: 155px;
     }
     .modal-header{
-        padding-left: 170px;
-        font-size: 70px;
+        position: relative;
+        top: 2vw;
+        left: 11.81vw;
         font-family: 'Mikadoo';
         line-height: 0.9;
-        padding-top: 60px;
+        font-size: 4.86vw;
+        text-transform: uppercase;
+    }
+    .modal-header.reverse{
+        position: relative;
+        top: -4vw;
+        left: -12vw;
     }
     .modal-name-text {
         position: absolute;
-        transform: rotate(-2.5deg);
-        top: 51%;
+        top: -3vw;
+        left: 6vw;
+        transform: rotate(-3deg);
         font-family: 'Mikadoo';
-        left: 15%;
     }
 
     .modal-image {
         border-radius: 115px 0 115px 0;
-        position: absolute;
-        left: 57%;
-        top: -15%;
     }
-
     @font-face {
         font-family: 'Mikadoo';
         src: url('/fonts/MikadoUltra.woff') format('woff'); /* Additional formats for better browser compatibility */
