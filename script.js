@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", function() {
 
     // Изменяем тему в локальном хранилище
@@ -65,32 +67,59 @@ document.addEventListener("DOMContentLoaded", function() {
     const openModalBtn = document.querySelector('.button8');
     const modal = document.getElementById('modal');
     const closeModalBtn = document.getElementById('closeModalBtn');
-    
+
     openModalBtn.addEventListener('click', function() {
-        modal.style.display = 'block'; 
+        modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
     });
-    
+
     closeModalBtn.addEventListener('click', function() {
-        modal.style.display = 'none'; 
+        modal.style.display = 'none';
         document.body.style.overflow = 'initial';
     });
-    
 
+    const openModalBtn1 = document.querySelector('.button4');
+    const modal1 = document.getElementById('modal1');
+    const closeModalBtn1 = document.getElementById('closeModalBtn1');
 
-    // Плавная прокрутка
-    document.querySelectorAll('.nav button').forEach(function(button) {
-        button.addEventListener('click', function(event) {
-            var link = button.querySelector('a').getAttribute('href');
-            if (link.startsWith('games.html')) {
-                return;
-            }
-            event.preventDefault();
-            var targetId = link.substring(1);
-            var targetBlock = document.getElementById(targetId);
-            targetBlock.scrollIntoView({ behavior: 'smooth' });
-        });
+    openModalBtn1.addEventListener('click', function() {
+        modal1.style.display = 'block';
+        document.body.style.overflow = 'hidden';
     });
+
+    closeModalBtn1.addEventListener('click', function() {
+        modal1.style.display = 'none';
+        document.body.style.overflow = 'initial';
+    });
+
+
+    var modalPetsImages = ['petLola.png', 'petMallow.png', 'petLa.png', 'petVintik.png']
+
+    var holder =  document.getElementById("petsImages");
+    var next = document.getElementById("nextBtn")
+    var prev = document.getElementById("prevBtn")
+
+    var image_count = 1;
+    next.addEventListener('click', function (){
+        console.log("qweqweq")
+        holder.src = modalPetsImages[image_count]
+        if (image_count >= modalPetsImages.length-1){
+            image_count = 0;
+        }else{
+            image_count ++;
+        }
+    })
+    prev.addEventListener('click', function (){
+        holder.src = modalPetsImages[image_count]
+        if (image_count === 0){
+            image_count = modalPetsImages.length-1;
+        }else{
+            image_count --;
+        }
+    })
 });
 
 
+
+
+// Function to increase image count
