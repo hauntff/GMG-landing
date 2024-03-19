@@ -13,6 +13,7 @@
         })();
     </script>
     <link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.css" rel="stylesheet">
+    <script src="/script.js"></script>
 </head>
 <body>
     <div class="container">
@@ -23,7 +24,7 @@
         <img src="img/main.png" id="GMGLogo">
         <div class="nav">
             <button><a href="#second">ABOUT US</a></button>
-            <button><a href="games.html">GAMES</a></button>
+            <button><a href="games.html" class="external-link">GAMES</a></button>
             <button><a href="#careers">CAREERS</a></button>
         </div>
         <!-- Пример кнопок -->
@@ -63,7 +64,7 @@
                 </path>
             </svg>
         </button>
-        <button class="button button7"  onclick="changeImage()">
+        <button class="button button7" id="themeButton">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.94444 6.05929V0H6.05556V6.05929H0V7.94071H6.05556V14H7.94444V7.94071H14V6.05929H7.94444Z" fill="#2E2E2E">
                 </path>
@@ -83,14 +84,14 @@
         </button>
     </div>
     <div class="container second" id="second">
-        <div>
+        <div class="help">
             <h3 class="h3title">About Good Morning Games</h3>
             <span class="aboutGMG">
-                Top talents across <br> great steppes <br>
-                of Kazakhstan <br>
-                came together <br>
-                to pursue one goal - <br>
-                change mobile <br>
+                Top talents across great steppes 
+                of Kazakhstan 
+                came together 
+                to pursue one goal - 
+                change mobile 
                 gaming industry
             </span>
         </div>
@@ -101,8 +102,8 @@
     <div class="careers" id="careers">
         <div class="careers-text">
             <h3 class="careers-title">Careers</h3>
-            <span class="careers-body">Together, we <br>will create <br>
-                high-quality <br> mobile games <br> that will be <br> played for <br> years.</span>
+            <span class="careers-body">Together, we will create 
+                high-quality mobile games that will be played for years.</span>
             <button class="send-CV-button">Send Your CV</button>
         </div>
         <div class="team-image">
@@ -149,8 +150,8 @@
             Copyright @ 2023 - Good Morning Games
         </span>
     </div>
-    <div class="modal" id="modal">
-        <div class="modal-content">
+    <div class="modal slides" id="modal">
+        <div class="modal-content" alt="Slide 1">
             <div class="modal-text">
                 <div class="modal-header">
                     <h2>MEET <br> OUT PETS</h2>
@@ -163,7 +164,52 @@
             <div class="modal-image">
                 <img src="img/petLola.png">
             </div>
-
+        </div>
+        <div class="modal-content" alt="Slide 2">
+            <div class="modal-text">
+                <div class="modal-header">
+                    <h2>MEET <br> OUT PETS</h2>
+                </div>
+                <div class="modal-note">
+                    <img src="/img/note.png">
+                    <p class="modal-name-text">MALLOW</p>
+                </div>
+            </div>
+            <div class="modal-image">
+                <img src="img/petMallow.png">
+            </div>
+        </div>
+        <div class="modal-content" alt="Slide 3">
+            <div class="modal-text">
+                <div class="modal-header">
+                    <h2>MEET <br> OUT PETS</h2>
+                </div>
+                <div class="modal-note">
+                    <img src="/img/note.png">
+                    <p class="modal-name-text">LA</p>
+                </div>
+            </div>
+            <div class="modal-image">
+                <img src="img/petLa.png">
+            </div>
+        </div>
+        <div class="modal-content" alt="Slide 4">
+            <div class="modal-text">
+                <div class="modal-header">
+                    <h2>MEET <br> OUT PETS</h2>
+                </div>
+                <div class="modal-note">
+                    <img src="/img/note.png">
+                    <p class="modal-name-text">VINTIK</p>
+                </div>
+            </div>
+            <div class="modal-image">
+                <img src="img/petVintik.png">
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button id="prevBtn">Prev</button>
+            <button id="nextBtn">Next</button>
         </div>
         <button class="button" id="closeModalBtn">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -176,16 +222,20 @@
 </body>
 </html>
 <style>
+    html {
+        scroll-behavior: smooth;
+    }
+
     .modal {
-        display: none; /* Начально скрываем модальное окно */
+        display: none; 
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         background-image: url("/img/modalBackground.png");
-        background-color: rgb(255,117,6);/* Полупрозрачный фон */
-        z-index: 1000; /* Выше остальных элементов */
+        background-color: rgb(255,117,6);
+        z-index: 1000; 
     }
 
     .modal-content {
@@ -247,9 +297,9 @@
         /* You can include more src declarations if you have different font formats */
     }
 
-    body::-webkit-scrollbar {
-        width: 10px;               /* width of the entire scrollbar */
-    }
+    /* body::-webkit-scrollbar {
+        width: 10px;
+    } */
 
     body::-webkit-scrollbar-track {
         background: #FFFFFF;
@@ -430,6 +480,7 @@
 
     #secondImage{
         display: block;
+        transition: all .3s ease;
     }
 
     .second{
@@ -439,21 +490,25 @@
         align-items: center;
         justify-content: center;
         background: #FF7506;
-        gap: 0.5vw;
+        gap: 0.1vw;
+    }
+    body.light .second{
+        background: #FF7506;
+    }
+    body.dark .second{
+        background: #14185F;
     }
     .img-container{
         position: relative;
-        top: -3vw;
-        margin-bottom: -3vw;
+        top: -2.5vw;
+        margin-bottom: -2.5vw;
     }
     .aboutGMG{
-        font-size: 49px;
+        font-size: 2.5vw;
         font-family: 'Mikadoo';
         position: relative;
-        line-height: 3vw;
         color: #FFFFFF;
         text-transform: uppercase;
-        top: 0.5vw;
     }
     br{
         margin: 0;
@@ -486,11 +541,14 @@
         flex-direction: column;
     }
     .send-CV-button{
+        position: absolute;
+        bottom: 2vw;
         margin-top: 50px;
         width: fit-content;
         padding: 10px 60px;
     }
     .team-image{
+        width: 50%;
         object-fit: cover;
         border-radius: 120px 0 0 0;
         overflow: hidden;
@@ -502,10 +560,12 @@
         display: block;
     }
     .careers-body{
-        font-size: 49px;
+        width: 30%;
+        min-width: 20vw;
+        font-size: 2.5vw;
         font-family: 'Mikadoo';
         position: relative;
-        line-height: 3vw;
+        line-height: 100%;
         color: #000000;
         text-transform: uppercase;
         top: 0.5vw;
@@ -611,43 +671,67 @@
         font-size: 10px;
         color: #9F9F9F;
     }
-
-
-</style>
-<script>
-    var images = ['img/Day.png', 'img/night.png'];
-    var images2 = ['img/secondImage.png', 'img/NightGirl.png'];
-    var images3 = ['img/teamPhoto.png', 'img/teamPhotoSecond.png'];
-    var images4 = ['img/orangeImage.png', 'img/blueImage.png'];
-    var currentIndex = 0;
-
-    function changeImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        document.getElementById('mainImage').src = images[currentIndex];
-        document.getElementById('secondImage').src = images2[currentIndex];
-        document.getElementById('teamPhoto').src = images3[currentIndex];
-        document.getElementById('footerImage').src = images4[currentIndex];
-        if (currentIndex % 2)
-        {
-            document.getElementById('second').style.backgroundColor = '#14185F';
-        }
-        else {
-            document.getElementById('second').style.backgroundColor = '#FF7506';
-
-        }
-
+    .help{
+        width: 33vw;
     }
 
-
-    const openModalBtn = document.querySelector('.button8');
-    const modal = document.getElementById('modal');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-
-    openModalBtn.addEventListener('click', function() {
-        modal.style.display = 'block'; // Показываем модальное окно при клике на кнопку
-    });
-
-    closeModalBtn.addEventListener('click', function() {
-        modal.style.display = 'none'; // Скрываем модальное окно при клике на кнопку "Close Modal"
-    });
-</script>
+    @media (max-width: 1330px) {
+        .second{
+            flex-direction: column;
+        }
+        .help{
+            width: 90%;
+        }
+        .careers{
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .careers-text{
+            width: 100%;
+            background: #FFFFFF;
+            flex-basis: 0;
+            flex-grow: 1;
+            overflow: hidden;
+            border-radius: 120px 0 120px 0;
+            display: flex;
+            padding: 0;
+            min-height: 40vw;
+            flex-direction: column;
+        }
+        .careers-title{
+            margin: 3vw;
+            padding-left: 5vw;
+        }
+        .send-CV-button{
+            position: absolute;
+            bottom: 2vw;
+            margin-top: 50px;
+            width: fit-content;
+            padding: 10px 60px;
+        }
+        .team-image{
+            width: 50%;
+            object-fit: cover;
+            border-radius: 120px 0 0 0;
+            overflow: hidden;
+        }
+        .team-image img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .careers-body{
+            width: 30%;
+            min-width: 20vw;
+            font-size: 2.5vw;
+            font-family: 'Mikadoo';
+            position: relative;
+            line-height: 100%;
+            color: #000000;
+            text-transform: uppercase;
+            top: 0.5vw;
+        }
+    }
+</style>
