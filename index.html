@@ -84,6 +84,32 @@
             </svg>
         </button>
     </div>
+    <div class="adaptive-button-container">
+        <div class="adaptive-button" id="themeImage">
+            <img src="./img/window.png" alt="" id="window">
+        </div>
+        <div class="adaptive-button button1">
+            <img src="./img/ball.png" alt="" id="ball">
+        </div>
+        <div class="adaptive-button button2">
+            <img src="./img/computer.png" alt="" id="computer">
+        </div>
+        <div class="adaptive-button button3">
+            <img src="./img/tea.png" alt="" id="tea">
+        </div>
+        <div class="adaptive-button button3">
+            <img src="./img/dollar.png" alt="" id="dollar">
+        </div>
+        <div class="adaptive-button button4">
+            <img src="./img/picture.png" alt="" id="picture">
+        </div>
+        <div class="adaptive-button button5">
+            <img src="./img/laptop.png" alt="" id="laptop">
+        </div>
+        <div class="button8 adaptive-button">
+            <img src="./img/cat.png" alt="" id="cat">
+        </div>
+    </div>
     <div class="container second" id="second">
         <div class="help">
             <h3 class="h3title">About Good Morning Games</h3>
@@ -139,11 +165,10 @@
                 <a href="#second">About Us</a>
                 <a href="games.html">Games</a>
                 <a href="#careers">Careers</a>
-                <a href="" class="term">Terms</a>
-                <a href="" class="term">Privacy</a>
+                <a href="cookie.html" class="term">Cookie Policy</a>
             </div>
             <span class="email">
-                support@gmg.studio
+                <a href=mailto:"support@gmg.studio">support@gmg.studio</a>
             </span>
         </div>
     </div>
@@ -311,7 +336,10 @@
 </body>
 </html>
 <style>
-
+    .email a{
+        color:#FFFFFF;
+        text-decoration: none;
+    }
     .custom-modal {
         display: none;
         position: fixed;
@@ -575,7 +603,12 @@
         background-color: #181818;    /* color of the scroll thumb */
         border: 3px solid #FFFFFF;  /* creates padding around scroll thumb */
     }
-
+    body.light {
+        background: #FF7506;
+    }
+    body.dark {
+        background: #14185F;
+    }
     .main-image__container{
         position: relative;
         width: 100%;
@@ -960,7 +993,30 @@
     .help{
         width: 33vw;
     }
-
+    .adaptive-button-container{
+        display: none;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 2.36vw;
+        overflow: scroll;
+        position: relative;
+        top: -50px;
+        padding: 0 2.36vw;
+        padding-bottom: 1vw;
+    }
+    .adaptive-button{
+        min-width: 160px;
+        min-height: 160px;
+        border-radius: 20px 0 20px 0;
+        /* border: 2px solid white; */
+        overflow: hidden;
+    }
+    .adaptive-button img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
     @media (max-width: 1330px) {
         .second{
             flex-direction: column;
@@ -1040,6 +1096,27 @@
         }
         .links{
             top: 90%;
+        }
+        .button::after{
+            display: none;
+        }
+        .button {
+            display: none;
+        }
+        #GMGLogo{
+            width: 30vw;
+            height: 15vw;
+        }
+        .nav{
+            display: none;
+        }
+        .overlay {
+            bottom: 7vw;
+            border: 2px solid white;
+            border-radius: 20px;
+        }
+        .adaptive-button-container{
+            display: flex;
         }
     }
 </style>

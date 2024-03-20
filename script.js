@@ -33,7 +33,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const currentTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
         setTheme(currentTheme);
     });
-
+    document.getElementById('themeImage').addEventListener('click', function() {
+        const currentTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
+        setTheme(currentTheme);
+    });
     window.addEventListener('beforeunload', function() {
         const currentTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
         localStorage.setItem('theme', currentTheme);
@@ -48,11 +51,27 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("secondImage").src = "img/NightGirl.png"
             document.getElementById("teamPhoto").src = "img/teamPhotoSecond.png"
             document.getElementById("footerImage").src = "img/blueImage.png"
+            document.getElementById("ball").src = "img/ball-night.png"
+            document.getElementById("computer").src = "img/computer-night.png"
+            document.getElementById("tea").src = "img/tea-night.png"
+            document.getElementById("dollar").src = "img/dollar-night.png"
+            document.getElementById("picture").src = "img/picture-night.png"
+            document.getElementById("laptop").src = "img/laptop-night.png"
+            document.getElementById("cat").src = "img/cat-night.png"
+            document.getElementById("window").src = "img/window-night.png"
         } else {
             document.getElementById("mainImage").src = "img/Day.png";
             document.getElementById("secondImage").src = "img/secondImage.png"
             document.getElementById("teamPhoto").src = "img/teamPhoto.png"
             document.getElementById("footerImage").src = "img/orangeImage.png"
+            document.getElementById("ball").src = "img/ball.png"
+            document.getElementById("computer").src = "img/computer.png"
+            document.getElementById("tea").src = "img/tea.png"
+            document.getElementById("dollar").src = "img/dollar.png"
+            document.getElementById("picture").src = "img/picture.png"
+            document.getElementById("laptop").src = "img/laptop.png"
+            document.getElementById("cat").src = "img/cat.png"
+            document.getElementById("window").src = "img/window.png"
         }
     }
 
@@ -75,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     closeModalBtn.addEventListener('click', function() {
         modal.classList.remove('show');
-        document.body.style.overflow = 'scroll';
+        document.body.style.overflow = 'initial';
     });
 
     var openModalBtn1 = document.querySelector('.button9');
@@ -89,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     closeModalBtn1.addEventListener('click', function() {
         modal1.classList.remove('show');
-        document.body.style.overflow = 'scroll';
+        document.body.style.overflow = 'initial';
     });
 
     var openModalBtn2 = document.querySelector('.button4');
@@ -103,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     closeModalBtn2.addEventListener('click', function() {
         modal2.classList.remove('show');
-        document.body.style.overflow = 'scroll';
+        document.body.style.overflow = 'initial';
     });
 
     var openModalBtn3 = document.querySelector('.button2');
@@ -117,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     closeModalBtn3.addEventListener('click', function() {
         modal3.classList.remove('show');
-        document.body.style.overflow = 'scroll';
+        document.body.style.overflow = 'initial';
     });
 
 
