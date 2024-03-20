@@ -230,11 +230,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var modalFavoritesHeaders = ['FAVORITE GAMES', 'MOVIES & TV', 'FAVORITE FOOD', 'FAVORITE SNACKS',
         'FAVORITE HOBBIES', 'FAVORITE DRINKS'];
-    var modalFirst = ['FC 24', 'Kemal', 'Tony', 'Nursultan', 'Roman', 'Anel']
-    var modalSecond = ['DOTA 2', 'Kemal', 'Tony', 'Nursultan', 'Roman', 'Anel']
-    var modalThird = ['CS:GO', 'Kemal', 'Tony', 'Nursultan', 'Roman', 'Anel']
-    var modalFourth = ['GTA', 'Kemal', 'Tony', 'Nursultan', 'Roman', 'Anel']
-    var modalFifth = ['Minecraft', 'Kemal', 'Tony', 'Nursultan', 'Roman', 'Anel']
+    var modalFirst = ['FC 24', 'THE GODFATHER', 'Tony', 'LAYS', 'READING', 'COLA']
+    var modalSecond = ['DOTA 2', 'INTERSTELLAR', 'Tony', 'DORITOS', 'ANIME', 'WATER']
+    var modalThird = ['CS:GO', 'BREAKING BAD', 'Tony', 'MILK CHOCOLATE', 'DRAWING', 'ORANGE JUICE']
+    var modalFourth = ['GTA', 'GAMES OF THRONES', 'Tony', 'APPLE', 'SKIING', 'SWEET TEA']
+    var modalFifth = ['Minecraft', 'THE GENTLEMAN', 'Tony', 'SNEAKERS', 'GYM', 'JAGERMEISTER']
 
     var next2 = document.getElementById("nextBtn2");
     var prev2 = document.getElementById("prevBtn2");
