@@ -16,78 +16,80 @@
     <script src="/script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="background"></div>
-        <div class="overlay"></div>
-        <header>
+<div class="container">
+    <div class="background"></div>
+    <div class="overlay"></div>
+    <header>
+        <a href="index.html">
             <img src="img/main.png" alt="">
-            <div class="nav">
-                <div class="nav-link"><a href="index.html#second">About Us</a></div>
-                <div class="nav-link"><a href="games.html">Games</a></div>
-                <div class="nav-link"><a href="index.html#careers">Careers</a></div>
+        </a>
+        <div class="nav">
+            <div class="nav-link"><a href="index.html#second">About Us</a></div>
+            <div class="nav-link"><a href="games.html">Games</a></div>
+            <div class="nav-link"><a href="index.html#careers">Careers</a></div>
+        </div>
+    </header>
+    <div class="games-container">
+        <div class="game">
+            <div class="info">
+                <div class="logo">
+                    <img src="img/logo/laguna.svg" alt="">
+                </div>
+                <div class="description">
+                    Join the adventurous world of Laguna! <br>
+                    We have hundreds of Action Pao levels <br>
+                    waiting for you!
+                </div>
+                <div class="stores">
+                    <img src="img/logo/googleplay.svg" alt="">
+                    <img src="img/logo/appstore.svg" alt="">
+                </div>
+                <a href="" class="policy">Privacy Policy</a>
             </div>
-        </header>
-        <div class="games-container">
-            <div class="game">
-                <div class="info">
-                    <div class="logo">
-                        <img src="img/logo/laguna.svg" alt="">
-                    </div>
-                    <div class="description">
-                        Join the adventurous world of Laguna! <br>
-                        We have hundreds of Action Pao levels <br>
-                        waiting for you!
-                    </div>
-                    <div class="stores">
-                        <img src="img/logo/googleplay.svg" alt="">
-                        <img src="img/logo/appstore.svg" alt="">
-                    </div>
-                    <a href="" class="policy">Privacy Policy</a>
-                </div>
-                <div class="image-container">
-                    <img src="img/phone-laguna.png" alt="">
-                </div>
-            </div>
-            <div class="game">
-                <div class="info">
-                    <div class="logo">
-                        <img src="img/logo/2tap.svg" alt="">
-                    </div>
-                    <div class="description">
-                        Join the adventurous world of Laguna! <br>
-                        We have hundreds of Action Pao levels <br>
-                        waiting for you!
-                    </div>
-                    <div class="stores">
-                        <img src="img/logo/googleplay.svg" alt="">
-                        <img src="img/logo/appstore.svg" alt="">
-                    </div>
-                    <a href="" class="policy">Privacy Policy</a>
-                </div>
-                <div class="image-container">
-                    <img src="img/phone-2tap.png" alt="">
-                </div>
+            <div class="image-container">
+                <img src="img/phone-laguna.png" alt="">
             </div>
         </div>
-        <div class="links">
-            <div class="links-grid">
-                <a href="index.html#second">About Us</a>
-                <a href="games.html">Games</a>
-                <a href="index.html#careers">Careers</a>
-                <a href="" class="term">Terms</a>
-                <a href="" class="term">Privacy</a>
+        <div class="game">
+            <div class="info">
+                <div class="logo">
+                    <img src="img/logo/2tap.svg" alt="">
+                </div>
+                <div class="description">
+                    Join the adventurous world of Laguna! <br>
+                    We have hundreds of Action Pao levels <br>
+                    waiting for you!
+                </div>
+                <div class="stores">
+                    <img src="img/logo/googleplay.svg" alt="">
+                    <img src="img/logo/appstore.svg" alt="">
+                </div>
+                <a href="" class="policy">Privacy Policy</a>
             </div>
-            <span class="email">
+            <div class="image-container">
+                <img src="img/phone-2tap.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="links">
+        <div class="links-grid">
+            <a href="index.html#second">About Us</a>
+            <a href="games.html">Games</a>
+            <a href="index.html#careers">Careers</a>
+            <a href="" class="term">Terms</a>
+            <a href="" class="term">Privacy</a>
+        </div>
+        <span class="email">
                 support@gmg.studio
             </span>
-        </div>
     </div>
-    <div class="footer">
-        <img src="img/main.png" class="logo">
-        <span class="copyright">
+</div>
+<div class="footer">
+    <img src="img/main.png" class="logo">
+    <span class="copyright">
             Copyright @ 2023 - Good Morning Games
         </span>
-    </div>
+</div>
 </body>
 </html>
 <style>
@@ -161,11 +163,11 @@
     .container::before {
         content: '';
         position: absolute;
-        top: 2.778vw; 
-        left: 2.361vw; 
-        right: 2.361vw; 
-        bottom: 7.639vw; 
-        border: 0.139vw solid white; 
+        top: 2.778vw;
+        left: 2.361vw;
+        right: 2.361vw;
+        bottom: 7.639vw;
+        border: 0.139vw solid white;
         border-radius: 1.042vw;
         z-index: 2;
     }
@@ -181,12 +183,14 @@
         align-items: flex-start;
         margin-bottom: 6.944vw;
     }
-    header img {
-        width: 16vw;
-        height: 8vw;
+    header a{
         position: relative;
         top: 7.8%;
         left: 5.6%;
+    }
+    header img {
+        width: 16vw;
+        height: 8vw;
     }
     header .nav {
         position: relative;
@@ -338,6 +342,67 @@
         font-family: 'MikadooLight';
         font-size: 0.694vw;
         color: #9F9F9F;
+    }
+    @media (max-width: 1330px){
+        header img {
+            width: 30vw;
+            height: 15vw;
+        }
+        header .nav {
+            display: none;
+        }
+        .game .info .logo{
+            width: fit-content;
+            height: 9vw;
+        }
+        .game {
+            width: 100%;
+            height: auto;
+        }
+        .game .info .description{
+            font-family: 'MikadooLight';
+            font-size: 3.5vw;
+            line-height: 100%;
+        }
+        .game .info .stores{
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+        }
+        .game .info .stores img{
+            width: 20vw;
+            height: 7.611vw;
+        }
+        .game .info .policy{
+            font-family: 'MikadooLight';
+            font-size: 3vw;
+            font-weight: 300;
+            letter-spacing: 0em;
+            color: #000000;
+            text-decoration: underline;
+        }
+        .email{
+            display: none;
+        }
+        .links-grid {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+            margin-left: 3vw;
+        }
+        .links-grid a {
+            font-size: 3vw;
+        }
+        .footer .logo{
+            width: 154px;
+            height: 71px;
+        }
+        .copyright{
+            font-family: 'MikadooLight';
+            font-size: 10px;
+            color: #9F9F9F;
+        }
     }
 
 </style>
