@@ -21,12 +21,23 @@
             <img src="img/Day.png" id="mainImage">
         </div>
         <div class="overlay"></div>
-        <img src="img/main.png" id="GMGLogo"
-        >
+        <img src="img/main.png" id="GMGLogo">
         <div class="nav">
             <button><a href="#second">ABOUT US</a></button>
             <button><a href="games.html" class="external-link">GAMES</a></button>
             <button><a href="#careers">CAREERS</a></button>
+        </div>
+        <div class="burger" id="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="burger-container" id="burgerContainer">
+            <div class="nav adaptive">
+                <button><a href="#second">ABOUT US</a></button>
+                <button><a href="games.html" class="external-link">GAMES</a></button>
+                <button><a href="#careers">CAREERS</a></button>
+            </div>
         </div>
         <!-- Пример кнопок -->
         <button class="button button1">
@@ -41,12 +52,15 @@
                 </path>
             </svg>
         </button>
-        <button class="button button3">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7.94444 6.05929V0H6.05556V6.05929H0V7.94071H6.05556V14H7.94444V7.94071H14V6.05929H7.94444Z" fill="#2E2E2E">
-                </path>
-            </svg>
-        </button>
+        <a href="contactUs.html" class="redirect">
+            <button class="button button3">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.94444 6.05929V0H6.05556V6.05929H0V7.94071H6.05556V14H7.94444V7.94071H14V6.05929H7.94444Z" fill="#2E2E2E">
+                    </path>
+                </svg>
+            </button>
+        </a>
+
         <button class="button button4">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.94444 6.05929V0H6.05556V6.05929H0V7.94071H6.05556V14H7.94444V7.94071H14V6.05929H7.94444Z" fill="#2E2E2E">
@@ -106,7 +120,7 @@
         <div class="adaptive-button button5">
             <img src="./img/laptop.png" alt="" id="laptop">
         </div>
-        <div class="button8 adaptive-button">
+        <div class="adaptive-button button8">
             <img src="./img/cat.png" alt="" id="cat">
         </div>
     </div>
@@ -132,7 +146,7 @@
                 <img src="img/teamPhoto.png" id="teamPhoto">
             </div>
             <div class="careers-text">
-                <h3 class="careers-title">Careers</h3>
+                <span class="careers-title">Careers</span>
                 <span class="careers-body">Together, we will create
                     high-quality mobile games that will be played for years.</span>
                 <button class="send-CV-button">Send Your CV</button>
@@ -644,6 +658,9 @@
         justify-content: space-around;
         width: 31vw;
     }
+    .nav.adaptive {
+        display: none;
+    }
 
     h3{
         font-weight: normal;
@@ -710,6 +727,7 @@
     a{
         text-decoration: none;
         color:#FFFFFF;
+
     }
     .button {
         z-index: 2;
@@ -747,6 +765,7 @@
         left: 21.5%;
         top: 55.6%;
     }
+
     .button4 {
         left: 45%;
         top: 70%;
@@ -870,7 +889,7 @@
     .careers-title{
         padding: 4.4vw 5.13vw 0 5.13vw;
         margin: 0;
-        /* font-size: 2.2vw; */
+        font-size: 2.2vw;
         font-weight: 400;
         line-height: 100%;
         text-align: left;
@@ -1000,21 +1019,62 @@
         gap: 2.36vw;
         overflow: scroll;
         position: relative;
-        top: -50px;
+        top: -3.5vw;
         padding: 0 2.36vw;
         padding-bottom: 1vw;
+        z-index: 6;
     }
     .adaptive-button{
-        min-width: 160px;
-        min-height: 160px;
+        min-width: 15vw;
+        min-height: 15vw;
         border-radius: 20px 0 20px 0;
         /* border: 2px solid white; */
         overflow: hidden;
+        cursor: pointer;
     }
     .adaptive-button img{
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+    .burger-container {
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        position: fixed;
+        z-index: 2000;
+        background: #FF750691;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.3s ease;
+    }
+    body.light .burger-container{
+        background: #FF750691;
+    }
+    body.dark .burger-container{
+        background: #14185fc7;
+    }
+    .burger {
+        position: absolute;
+        top: 10%;
+        right: 6%;
+        width: 29px;
+        height: 25px;
+        gap: 5px;
+        z-index: 2001;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0px 4px 4px 0px #0000001C;
+        cursor: pointer;
+    }
+
+    .burger .line {
+        width: 29px;
+        height: 5px;
+        border-radius: 17px;
+        background: white;
     }
     @media (max-width: 1330px) {
         .second{
@@ -1027,39 +1087,44 @@
             flex-direction: column-reverse;
         }
         .careers-text{
+            padding: 0;
             width: 100%;
-            height: 300px;
-            border-radius: 120px 0 0 0;
+            height: 310px;
+            border-radius: 50px 0 50px 0;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            align-items: flex-start;
         }
         .team-image{
             width: 100%;
-            height: 430px;
+            height: 206px;
             object-fit: cover;
-            border-radius: 120px 0 120px 0;
+            border-radius: 50px 0 50px 0;
             overflow: hidden;
             position: relative;
-            margin-top: -100px;
+            margin-top: -90px;
             z-index: 2;
         }
         .careers-title{
-            padding: 30px 60px;
-            font-size: 18px;
+            padding: 20px 0 6px 46px;
+            font-size: 16px;
             font-weight: 400;
             line-height: 100%;
             text-align: left;
         }
         .careers-body{
             max-width: 87%;
-            height: 100%;
-            padding: 30px 60px;
+            height: fit-content;
+            padding: 0 0 0 46px;
             padding-top: 0;
             font-size: 27px !important;
         }
         .send-CV-button{
-            display: none;
+            position: relative;
+            width: 100%;
+            margin: 2vw auto;
+            padding: 0;
         }
         .h3title{
             font-size: 18px;
@@ -1109,13 +1174,46 @@
         .nav{
             display: none;
         }
+        .nav.adaptive {
+            display: flex;
+            position: relative;
+            top: initial;
+            left: initial;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .nav button, .send-CV-button {
+            font-size: 18px;
+            width: 132px;
+            padding: 10px;
+            border-radius: 51px;
+        }
+
+        .send-CV-button{
+            padding: 10px 20px;
+            width: fit-content;
+        }
+
+        .burger{
+            display: flex;
+        }
+
+        .burger-container.active{
+            display: flex;
+            opacity: 1;
+        }
+
+        .adaptive-button-container {
+            display: flex;
+        }
         .overlay {
             bottom: 7vw;
             border: 2px solid white;
             border-radius: 20px;
-        }
-        .adaptive-button-container{
-            display: flex;
         }
     }
 </style>

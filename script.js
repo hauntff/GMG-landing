@@ -2,6 +2,20 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
+    if(document.getElementById('burger')){
+        document.getElementById('burger').addEventListener('click', function() {
+            var container = document.getElementById('burgerContainer');
+            container.classList.toggle('active');
+
+            if (container.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                console.log('none');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
     // Изменяем тему в локальном хранилище
     const overlay = document.querySelector('.overlay');
     function setTheme(theme) {
@@ -83,8 +97,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     // Открытие и закрытие модального окна
-    var openModalBtn = document.querySelector('.button8');
+    var openModalBtn;
+    var openModalBtn1;
+    var openModalBtn2 ;
+    var openModalBtn3 ;
     var modal = document.getElementById('modal');
+    var modal1 = document.getElementById('modal1');
+    var modal2 = document.getElementById('modal2');
+    var modal3 = document.getElementById('modal3');
+
+    if (window.matchMedia('(max-width: 1330px)').matches) {
+        openModalBtn = document.getElementById('cat');
+        openModalBtn1 = document.getElementById('ball');
+        openModalBtn2 = document.getElementById('picture');
+        openModalBtn3 = document.getElementById('computer');
+    }
+    else {
+        openModalBtn = document.querySelector('.button8');
+        openModalBtn1 = document.querySelector('.button9');
+        openModalBtn2 = document.querySelector('.button4');
+        openModalBtn3 = document.querySelector('.button2');
+    }
+
     var closeModalBtn = document.getElementById('closeModalBtn');
 
     openModalBtn.addEventListener('click', function() {
@@ -97,8 +131,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.style.overflow = 'initial';
     });
 
-    var openModalBtn1 = document.querySelector('.button9');
-    var modal1 = document.getElementById('modal1');
     var closeModalBtn1 = document.getElementById('closeModalBtn1');
 
     openModalBtn1.addEventListener('click', function() {
@@ -111,8 +143,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.style.overflow = 'initial';
     });
 
-    var openModalBtn2 = document.querySelector('.button4');
-    var modal2 = document.getElementById('modal2');
     var closeModalBtn2 = document.getElementById('closeModalBtn2');
 
     openModalBtn2.addEventListener('click', function() {
@@ -125,8 +155,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.style.overflow = 'initial';
     });
 
-    var openModalBtn3 = document.querySelector('.button2');
-    var modal3 = document.getElementById('modal3');
     var closeModalBtn3 = document.getElementById('closeModalBtn3');
 
     openModalBtn3.addEventListener('click', function() {
@@ -193,9 +221,6 @@ document.addEventListener("DOMContentLoaded", function() {
             holder3.classList.add('fade-animation');
         }, 0);
     }
-
-
-
     //Модалка для людей
     var currentIndex1 = 0;
 
@@ -262,7 +287,4 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("fifth-favorite").innerText = modalFifth[currentIndex2];
         }, 0);
     }
-
-
-
 });
