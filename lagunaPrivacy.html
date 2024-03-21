@@ -29,6 +29,18 @@
       <div class="nav-link"><a href="index.html#careers">Careers</a></div>
     </div>
   </header>
+  <div class="burger" id="burger">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+  <div class="burger-container" id="burgerContainer">
+    <div class="nav adaptive">
+      <button><a href="#second">ABOUT US</a></button>
+      <button><a href="games.html" class="external-link">GAMES</a></button>
+      <button><a href="#careers">CAREERS</a></button>
+    </div>
+  </div>
   <div class="games-container">
     <div class="game">
       <div class="info">
@@ -634,6 +646,50 @@
 </body>
 </html>
 <style>
+
+
+  .burger-container {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    position: fixed;
+    z-index: 2000;
+    background: #FF750691;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+  }
+  body.light .burger-container{
+    background: #FF750691;
+  }
+  body.dark .burger-container{
+    background: #14185fc7;
+  }
+  .burger {
+    position: absolute;
+    top: 10%;
+    right: 6%;
+    width: 69px;
+    height: 35px;
+    gap: 5px;
+    z-index: 2001;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 4px 4px 0px #0000001C;
+    cursor: pointer;
+  }
+
+  .burger .line {
+    width: 49px;
+    height: 15px;
+    border-radius: 17px;
+    background: white;
+  }
+  .burger{
+    display: none;
+  }
   p{
     margin:0;
   }
@@ -978,7 +1034,14 @@
       width: 100%;
       height: auto;
     }
+    .burger{
+      display: flex;
+    }
 
+    .burger-container.active{
+      display: flex;
+      opacity: 1;
+    }
     .game .info .description {
       font-family: 'MikadooLight';
       font-size: 3.5vw;

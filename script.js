@@ -110,8 +110,8 @@ document.addEventListener("DOMContentLoaded", function() {
     if (window.matchMedia('(max-width: 1330px)').matches) {
         openModalBtn = document.getElementById('cat');
         openModalBtn1 = document.getElementById('ball');
-        openModalBtn2 = document.getElementById('picture');
-        openModalBtn3 = document.getElementById('computer');
+        openModalBtn2 = document.getElementById('tea');
+        openModalBtn3 = document.getElementById('dollar');
     }
     else {
         openModalBtn = document.querySelector('.button8');
