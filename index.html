@@ -1059,8 +1059,8 @@
         position: absolute;
         top: 10%;
         right: 6%;
-        width: 29px;
-        height: 25px;
+        width: 69px;
+        height: 35px;
         gap: 5px;
         z-index: 2001;
         display: none;
@@ -1071,8 +1071,8 @@
     }
 
     .burger .line {
-        width: 29px;
-        height: 5px;
+        width: 49px;
+        height: 15px;
         border-radius: 17px;
         background: white;
     }
@@ -1161,10 +1161,10 @@
         .links{
             top: 90%;
         }
-        .button::after{
+        .container .button::after{
             display: none;
         }
-        .button {
+        .container .button {
             display: none;
         }
         #GMGLogo{
@@ -1215,5 +1215,44 @@
             border: 2px solid white;
             border-radius: 20px;
         }
+        #petsImages {
+            position: relative;
+            right: 10vw;
+            width: 40vw;
+            height: 40vw;
+        }
+        .modal-header{
+            margin-top: 20px;
+        }
+        .modal-content{
+            height: 30vw;
+        }
+        .modal button{
+            z-index: 100;
+        }
+        #closeModalBtn, #closeModalBtn1, #closeModalBtn2, #closeModalBtn3 {
+            left: 93.5%;
+            top: 1%;
+            height: 5vw;
+            font-size: 3.5vw;
+            width: 5vw;
+        }
+
+        #closeModalBtn::after, #closeModalBtn1::after, #closeModalBtn2::after, #closeModalBtn3::after {
+            width: 4.5vw;
+            height: 4.5vw;
+            position: absolute;
+            top: calc(50% - 2.25vw);
+            left: calc(50% - 2.25vw);
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2E2E2E;
+        }
+
+
     }
 </style>

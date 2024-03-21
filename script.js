@@ -97,10 +97,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     // Открытие и закрытие модального окна
-    var openModalBtn;
-    var openModalBtn1;
-    var openModalBtn2 ;
-    var openModalBtn3 ;
+    var openModalBtn = document.querySelector('.button8');
+    var openModalBtn1 = document.querySelector('.button9');
+    var openModalBtn2 = document.querySelector('.button4');
+    var openModalBtn3 = document.querySelector('.button2');
+    var burger = document.querySelector('.burger');
     var modal = document.getElementById('modal');
     var modal1 = document.getElementById('modal1');
     var modal2 = document.getElementById('modal2');
@@ -123,11 +124,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     openModalBtn.addEventListener('click', function() {
         modal.classList.add('show');
+        burger.style.display = 'none';
         document.body.style.overflow = 'hidden';
     });
 
     closeModalBtn.addEventListener('click', function() {
         modal.classList.remove('show');
+        burger.style.display = 'flex';
+
         document.body.style.overflow = 'initial';
     });
 
@@ -135,6 +139,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     openModalBtn1.addEventListener('click', function() {
         modal1.classList.add('show');
+        burger.style.display = 'none';
+
         document.body.style.overflow = 'hidden';
     });
 
@@ -147,6 +153,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     openModalBtn2.addEventListener('click', function() {
         modal2.classList.add('show');
+        burger.style.display = 'none';
+
         document.body.style.overflow = 'hidden';
     });
 
@@ -159,6 +167,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     openModalBtn3.addEventListener('click', function() {
         modal3.classList.add('show');
+        burger.style.display = 'none';
+
         document.body.style.overflow = 'hidden';
     });
 
