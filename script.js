@@ -207,30 +207,30 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 0);
     }
 
-    var currentIndex3 = 0;
+    // var currentIndex3 = 0;
 
-    var modalTeamPhotos = ['teamPhotoKemal.png', 'teamPhotoTony.png', 'teamPhotoGirls'];
-    var next3 = document.getElementById("nextBtn3");
-    var prev3 = document.getElementById("prevBtn3");
-    var holder3 = document.getElementById("teamPhotoModal");
+    // var modalTeamPhotos = ['teamPhotoKemal.png', 'teamPhotoTony.png', 'teamPhotoGirls'];
+    // var next3 = document.getElementById("nextBtn3");
+    // var prev3 = document.getElementById("prevBtn3");
+    // var holder3 = document.getElementById("teamPhotoModal");
 
-    next3.addEventListener('click', function() {
-        currentIndex3 = (currentIndex3 + 1 + modalTeamPhotos.length) % modalTeamPhotos.length;
-        updateTeamPhotosSlide();
-    });
+    // next3.addEventListener('click', function() {
+    //     currentIndex3 = (currentIndex3 + 1 + modalTeamPhotos.length) % modalTeamPhotos.length;
+    //     updateTeamPhotosSlide();
+    // });
 
-    prev3.addEventListener('click', function() {
-        currentIndex3 = (currentIndex3 - 1 + modalTeamPhotos.length) % modalTeamPhotos.length;
-        updateTeamPhotosSlide();
-    });
+    // prev3.addEventListener('click', function() {
+    //     currentIndex3 = (currentIndex3 - 1 + modalTeamPhotos.length) % modalTeamPhotos.length;
+    //     updateTeamPhotosSlide();
+    // });
 
-    function updateTeamPhotosSlide() {
-        holder3.classList.remove('fade-animation');
-        setTimeout(function() {
-            holder3.src = 'img/' + modalTeamPhotos[currentIndex3];
-            holder3.classList.add('fade-animation');
-        }, 0);
-    }
+    // function updateTeamPhotosSlide() {
+    //     holder3.classList.remove('fade-animation');
+    //     setTimeout(function() {
+    //         holder3.src = 'img/' + modalTeamPhotos[currentIndex3];
+    //         holder3.classList.add('fade-animation');
+    //     }, 0);
+    // }
     //Модалка для людей
     var currentIndex1 = 0;
 
@@ -297,4 +297,48 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("fifth-favorite").innerText = modalFifth[currentIndex2];
         }, 0);
     }
+
+    const slides = document.querySelectorAll('.modal-slide');
+    const prevButton = document.getElementById('prevBtn3');
+    const nextButton = document.getElementById('nextBtn3');
+    const sliderContainer = document.querySelector('.modal-slider-container');
+
+    let activeIndex = 1;
+
+    function setActiveSlide(index) {
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
+        });
+    }
+
+    function scrollToActiveSlide() {
+        const activeSlide = document.querySelector('.modal-slide.active');
+        activeSlide.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+    }
+
+    function handlePrevButtonClick() {
+        console.log('prev');
+        activeIndex = Math.max(0, activeIndex - 1);
+        setActiveSlide(activeIndex);
+        scrollToActiveSlide();
+    }
+
+    function handleNextButtonClick() {
+        console.log('next');
+        activeIndex = Math.min(slides.length - 1, activeIndex + 1);
+        setActiveSlide(activeIndex);
+        scrollToActiveSlide();
+    }
+
+    prevButton.addEventListener('click', handlePrevButtonClick);
+    nextButton.addEventListener('click', handleNextButtonClick);
+
+    sliderContainer.scrollLeft = slides[0].offsetWidth;
 });

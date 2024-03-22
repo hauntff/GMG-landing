@@ -20,7 +20,7 @@
     <div class="background"></div>
     <div class="overlay"></div>
     <header>
-        <a href="index.html">
+        <a href="index.html" class="logo-container">
             <img src="img/main.png" alt="">
         </a>
         <div class="nav">
@@ -199,7 +199,7 @@
         align-items: flex-start;
         margin-bottom: 6.944vw;
     }
-    header a{
+    header .logo-container{
         position: relative;
         top: 7.8%;
         left: 5.6%;
@@ -379,10 +379,10 @@
     }
     .burger {
         position: absolute;
-        top: 4%;
-        right: 5%;
-        width: 29px;
-        height: 25px;
+        top: 5vw;
+        right: 6%;
+        width: 49px;
+        height: 35px;
         gap: 5px;
         z-index: 2001;
         display: none;
@@ -393,8 +393,8 @@
     }
 
     .burger .line {
-        width: 29px;
-        height: 5px;
+        width: 49px;
+        height: 15px;
         border-radius: 17px;
         background: white;
     }
@@ -498,6 +498,11 @@
 
         .adaptive-button-container {
             display: flex;
+        }
+        .container::before {
+            border: 2px solid white;
+            border-radius: 20px;
+            z-index: 2;
         }
     }
 
