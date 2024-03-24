@@ -97,10 +97,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     // Открытие и закрытие модального окна
-    var openModalBtn = document.querySelector('.button8');
-    var openModalBtn1 = document.querySelector('.button9');
-    var openModalBtn2 = document.querySelector('.button4');
-    var openModalBtn3 = document.querySelector('.button2');
+    var openModalBtn;
+    // = document.querySelector('.button8');
+    var openModalBtn1;
+    // = document.querySelector('.button9');
+    var openModalBtn2;
+    // = document.querySelector('.button4');
+    var openModalBtn3;
+    // = document.querySelector('.button2');
     var burger = document.querySelector('.burger');
     var modal = document.getElementById('modal');
     var modal1 = document.getElementById('modal1');
@@ -110,8 +114,8 @@ document.addEventListener("DOMContentLoaded", function() {
     if (window.matchMedia('(max-width: 1330px)').matches) {
         openModalBtn = document.getElementById('cat');
         openModalBtn1 = document.getElementById('ball');
-        openModalBtn2 = document.getElementById('picture');
-        openModalBtn3 = document.getElementById('computer');
+        openModalBtn2 = document.getElementById('tea');
+        openModalBtn3 = document.getElementById('dollar');
     }
     else {
         openModalBtn = document.querySelector('.button8');
