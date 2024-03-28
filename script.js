@@ -63,8 +63,8 @@ document.addEventListener("DOMContentLoaded", function() {
         if (theme === "dark") {
             document.getElementById("mainImage").src = "img/night.png";
             document.getElementById("secondImage").src = "img/NightGirl.png"
-            document.getElementById("teamPhoto").src = "img/teamPhotoSecond.png"
             document.getElementById("footerImage").src = "img/blueImage.png"
+            // document.getElementById("footerImage2").src = "img/blueImage.png"
             document.getElementById("ball").src = "img/ball-night.png"
             document.getElementById("computer").src = "img/computer-night.png"
             document.getElementById("tea").src = "img/tea-night.png"
@@ -73,11 +73,13 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("laptop").src = "img/laptop-night.png"
             document.getElementById("cat").src = "img/cat-night.png"
             document.getElementById("window").src = "img/window-night.png"
-        } else {
+
+        }
+        else {
             document.getElementById("mainImage").src = "img/Day.png";
             document.getElementById("secondImage").src = "img/secondImage.png"
-            document.getElementById("teamPhoto").src = "img/teamPhoto.png"
             document.getElementById("footerImage").src = "img/orangeImage.png"
+            // document.getElementById("footerImage2").src = "img/orangeImage.png"
             document.getElementById("ball").src = "img/ball.png"
             document.getElementById("computer").src = "img/computer.png"
             document.getElementById("tea").src = "img/tea.png"
@@ -86,8 +88,12 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("laptop").src = "img/laptop.png"
             document.getElementById("cat").src = "img/cat.png"
             document.getElementById("window").src = "img/window.png"
+
+
         }
     }
+
+
 
     updateImage();
 
@@ -97,10 +103,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     // Открытие и закрытие модального окна
-    var openModalBtn = document.querySelector('.button8');
-    var openModalBtn1 = document.querySelector('.button9');
-    var openModalBtn2 = document.querySelector('.button4');
-    var openModalBtn3 = document.querySelector('.button2');
+    var openModalBtn;
+    var openModalBtn1;
+    var openModalBtn2;
+    var openModalBtn3;
     var burger = document.querySelector('.burger');
     var modal = document.getElementById('modal');
     var modal1 = document.getElementById('modal1');
@@ -110,8 +116,8 @@ document.addEventListener("DOMContentLoaded", function() {
     if (window.matchMedia('(max-width: 1330px)').matches) {
         openModalBtn = document.getElementById('cat');
         openModalBtn1 = document.getElementById('ball');
-        openModalBtn2 = document.getElementById('picture');
-        openModalBtn3 = document.getElementById('computer');
+        openModalBtn2 = document.getElementById('tea');
+        openModalBtn3 = document.getElementById('dollar');
     }
     else {
         openModalBtn = document.querySelector('.button8');
@@ -146,6 +152,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     closeModalBtn1.addEventListener('click', function() {
         modal1.classList.remove('show');
+        burger.style.display = 'flex';
+
         document.body.style.overflow = 'initial';
     });
 
@@ -160,6 +168,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     closeModalBtn2.addEventListener('click', function() {
         modal2.classList.remove('show');
+        burger.style.display = 'flex';
+
         document.body.style.overflow = 'initial';
     });
 
@@ -174,6 +184,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     closeModalBtn3.addEventListener('click', function() {
         modal3.classList.remove('show');
+        burger.style.display = 'flex';
+
         document.body.style.overflow = 'initial';
     });
 
@@ -182,8 +194,9 @@ document.addEventListener("DOMContentLoaded", function() {
     //Модалка для животных
     var currentIndex = 0;
 
-    var modalPetsImages = ['petLola.png', 'petMallow.png', 'petLa.png', 'petVintik.png']
-    var modalPetsNames = ['Lola', 'Mallow', 'La', 'Vintik']
+    var modalPetsImages = ['petLola.png', 'petMallow.png', 'petLa.png', 'petVintik.png', 'Axel.png',
+        'Milka.png', 'Pusya.png']
+    var modalPetsNames = ['Lola', 'Mallow', 'La', 'Vintik', 'Axel', 'Milka' , 'Pusya']
     var next = document.getElementById("nextBtn")
     var prev = document.getElementById("prevBtn")
     var holder =  document.getElementById("petsImages");
@@ -207,31 +220,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 0);
     }
 
-    var currentIndex3 = 0;
-
-    var modalTeamPhotos = ['teamPhotoKemal.png', 'teamPhotoTony.png', 'teamPhotoGirls'];
-    var next3 = document.getElementById("nextBtn3");
-    var prev3 = document.getElementById("prevBtn3");
-    var holder3 = document.getElementById("teamPhotoModal");
-
-    next3.addEventListener('click', function() {
-        currentIndex3 = (currentIndex3 + 1 + modalTeamPhotos.length) % modalTeamPhotos.length;
-        updateTeamPhotosSlide();
-    });
-
-    prev3.addEventListener('click', function() {
-        currentIndex3 = (currentIndex3 - 1 + modalTeamPhotos.length) % modalTeamPhotos.length;
-        updateTeamPhotosSlide();
-    });
-
-    function updateTeamPhotosSlide() {
-        holder3.classList.remove('fade-animation');
-        setTimeout(function() {
-            holder3.src = 'img/' + modalTeamPhotos[currentIndex3];
-            holder3.classList.add('fade-animation');
-        }, 0);
-    }
-    //Модалка для людей
     var currentIndex1 = 0;
 
     var modalPeopleImages = ['Yelzhan.png', 'Kemal.png', 'Tony.png', 'Nurs.png',
@@ -265,11 +253,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var modalFavoritesHeaders = ['FAVORITE GAMES', 'MOVIES & TV', 'FAVORITE FOOD', 'FAVORITE SNACKS',
         'FAVORITE HOBBIES', 'FAVORITE DRINKS'];
-    var modalFirst = ['FC 24', 'THE GODFATHER', 'Tony', 'LAYS', 'READING', 'COLA']
-    var modalSecond = ['DOTA 2', 'INTERSTELLAR', 'Tony', 'DORITOS', 'ANIME', 'WATER']
-    var modalThird = ['CS:GO', 'BREAKING BAD', 'Tony', 'MILK CHOCOLATE', 'DRAWING', 'ORANGE JUICE']
-    var modalFourth = ['GTA', 'GAMES OF THRONES', 'Tony', 'APPLE', 'SKIING', 'SWEET TEA']
-    var modalFifth = ['Minecraft', 'THE GENTLEMAN', 'Tony', 'SNEAKERS', 'GYM', 'JAGERMEISTER']
+    var modalFirst = ['FC 24', 'THE GODFATHER', 'RICE & CHICKEN', 'LAYS', 'READING', 'COLA']
+    var modalSecond = ['DOTA 2', 'INTERSTELLAR', 'MANTY', 'DORITOS', 'ANIME', 'WATER']
+    var modalThird = ['CS:GO', 'BREAKING BAD', 'MEAT', 'MILK CHOCOLATE', 'DRAWING', 'ORANGE JUICE']
+    var modalFourth = ['GTA', 'GAMES OF THRONES', 'BESBARMAK', 'APPLE', 'SKIING', 'SWEET TEA']
+    var modalFifth = ['Minecraft', 'THE GENTLEMAN', 'ITALIAN', 'SNEAKERS', 'GYM', 'JAGERMEISTER']
 
     var next2 = document.getElementById("nextBtn2");
     var prev2 = document.getElementById("prevBtn2");
@@ -297,4 +285,65 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("fifth-favorite").innerText = modalFifth[currentIndex2];
         }, 0);
     }
+
+    const slides = document.querySelectorAll('.modal-slide');
+    const prevButton = document.getElementById('prevBtn3');
+    const nextButton = document.getElementById('nextBtn3');
+    const sliderContainer = document.querySelector('.modal-slider-container');
+
+    let activeIndex = 1;
+
+    function setActiveSlide(index) {
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
+        });
+    }
+
+    function scrollToActiveSlide() {
+        const activeSlide = document.querySelector('.modal-slide.active');
+        activeSlide.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+    }
+
+    function handlePrevButtonClick() {
+        console.log('prev');
+        activeIndex = Math.max(0, activeIndex - 1);
+        setActiveSlide(activeIndex);
+        scrollToActiveSlide();
+    }
+
+    function handleNextButtonClick() {
+        console.log('next');
+        activeIndex = Math.min(slides.length - 1, activeIndex + 1);
+        setActiveSlide(activeIndex);
+        scrollToActiveSlide();
+    }
+
+    prevButton.addEventListener('click', handlePrevButtonClick);
+    nextButton.addEventListener('click', handleNextButtonClick);
+
+    sliderContainer.scrollLeft = slides[0].offsetWidth;
+
+    function checkScreenWidth() {
+        if (window.innerWidth <= 1330) {
+            document.getElementById("teamPhoto").src = "img/teamPhotoSecond2.png";
+        } else {
+            // Вернуть изображение обратно, если ширина больше 1330px
+            document.getElementById("teamPhoto").src = "img/teamPhotoSecond.png";
+        }
+    }
+
+// Проверить ширину экрана при загрузке страницы
+    checkScreenWidth();
+
+// Проверить ширину экрана при каждом изменении размера окна
+    window.addEventListener('resize', checkScreenWidth);
 });
+
+

@@ -13,14 +13,15 @@
         })();
     </script>
     <link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.css" rel="stylesheet">
-    <script src="/script.js"></script>
+<!--    <script src="/script.js"></script>-->
+
 </head>
 <body>
 <div class="container">
     <div class="background"></div>
     <div class="overlay"></div>
     <header>
-        <a href="index.html">
+        <a href="index.html" class="logo-container">
             <img src="img/main.png" alt="">
         </a>
         <div class="nav">
@@ -53,8 +54,12 @@
                     waiting for you!
                 </div>
                 <div class="stores">
-                    <img src="img/logo/googleplay.svg" alt="">
-                    <img src="img/logo/appstore.svg" alt="">
+                    <a href="https://play.google.com/store/apps/details?id=com.goodmorninggames.laguna&hl=en&gl=US">
+                        <img src="img/logo/googleplay.svg" alt="">
+                    </a>
+                    <a href="https://apps.apple.com/us/app/laguna/id6444761396">
+                        <img src="img/logo/appstore.svg" alt="">
+                    </a>
                 </div>
                 <a href="lagunaPrivacy.html" class="policy">Privacy Policy</a>
             </div>
@@ -68,19 +73,45 @@
                     <img src="img/logo/2tap.svg" alt="">
                 </div>
                 <div class="description">
-                    Join the adventurous world of Laguna! <br>
-                    We have hundreds of Action Pao levels <br>
-                    waiting for you!
+                    Simple rules: find and connect similar <br>
+                    items with two taps! <br>
+                    Solve tasks and train your brain.
                 </div>
                 <div class="stores">
-                    <img src="img/logo/googleplay.svg" alt="">
-                    <img src="img/logo/appstore.svg" alt="">
+                    <a href="https://play.google.com/store/apps/details?id=com.goodmorninggames.twotap">
+                        <img src="img/logo/googleplay.svg" alt="">
+                    </a>
+                    <a href="https://apps.apple.com/kz/app/two-tap-connect/id6472477567">
+                        <img src="img/logo/appstore.svg" alt="">
+                    </a>
                 </div>
                 <a href="twoTapPrivacy.html" class="policy">Privacy Policy</a>
             </div>
             <div class="image-container">
                 <img src="img/phone-2tap.png" alt="">
             </div>
+        </div>
+    </div>
+</div>
+<div class="contacts">
+    <img src="img/orangeImage.png" class="mainImage" id="footerImage2">
+    <div class="social">
+        <div class="social-title">
+            FOLLOW US
+        </div>
+        <div class="social-grid">
+            <a href="https://www.facebook.com/lagunamobile" class="item">
+                <img src="/img/facebook.svg" alt="">
+            </a>
+            <a href="https://www.instagram.com/lagunamobile/" class="item">
+                <img src="/img/instagram.svg" alt="">
+            </a>
+            <a href="" class="item">
+                <img src="/img/x.svg" alt="">
+            </a>
+            <a href="https://www.linkedin.com/company/goodmorninggames/" class="item">
+                <img src="/img/in.svg" alt="">
+            </a>
         </div>
     </div>
     <div class="links">
@@ -91,16 +122,18 @@
             <a href="cookie.html" class="term">Cookie Policy</a>
         </div>
         <span class="email">
-                <a href=mailto:"support@gmg.studio">support@gmg.studio</a>
-            </span>
+            <a href=mailto:"support@gmg.studio">support@gmg.studio</a>
+        </span>
     </div>
 </div>
+
 <div class="footer">
     <img src="img/main.png" class="logo">
     <span class="copyright">
-            Copyright @ 2024 - GMG
-        </span>
+        Copyright @ 2024 - GMG
+    </span>
 </div>
+
 </body>
 </html>
 <style>
@@ -118,21 +151,34 @@
         src: url('/fonts/SF-Pro-Display-Thin.otf') format('opentype');
     }
 
-    body::-webkit-scrollbar {
-        width: 10px;               /* width of the entire scrollbar */
+
+    html::-webkit-scrollbar {
+        width: 10px;
+        /* width of the entire scrollbar */
     }
 
-    body::-webkit-scrollbar-track {
+    html::-webkit-scrollbar-track {
         background: #FFFFFF;
-        opacity: 0.7/* color of the tracking area */
+        opacity: 0.66
+        /* color of the tracking area */
     }
 
-    body::-webkit-scrollbar-thumb {
+    html::-webkit-scrollbar-thumb {
+        background-color: #181818;
+        /* color of the scroll thumb */
         border-radius: 14px;
-        background-color: #181818;    /* color of the scroll thumb */
-        border: 3px solid #FFFFFF;  /* creates padding around scroll thumb */
+        /* roundness of the scroll thumb */
+        border: 3px solid #FFFFFF;
+        /* creates padding around scroll thumb */
     }
 
+    .mainImage {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
 
     body {
         margin: 0;
@@ -145,7 +191,7 @@
         background: url('img/Day.png') no-repeat center center/cover;
     }
     body.dark{
-        background: url('img/Night.png') no-repeat center center/cover;
+        background: url('img/night.png') no-repeat center center/cover;
     }
     a{
         text-decoration: none;
@@ -199,7 +245,7 @@
         align-items: flex-start;
         margin-bottom: 6.944vw;
     }
-    header a{
+    header .logo-container{
         position: relative;
         top: 7.8%;
         left: 5.6%;
@@ -339,6 +385,82 @@
         text-align: center;
         color: #FFFFFF;
     }
+
+    .contacts {
+        position: relative;
+        width: 100%;
+        margin-top: -35vw;
+        overflow: hidden;
+    }
+
+
+    .social {
+        position: absolute;
+        top: 70%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2.3vw;
+        z-index: 2;
+    }
+
+    .social-title {
+        font-family: 'GMG';
+        font-size: 36px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    .social-grid {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2.3vw;
+    }
+
+    .social-grid .item {
+        width: 0.9vw;
+        height: 0.9vw;
+        padding: 2vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #FFFFFF;
+        border-radius: 50%;
+    }
+
+    .links {
+        position: absolute;
+        top: 93%;
+        z-index: 2;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .links-grid {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 17px;
+        margin-left: 63px;
+    }
+
+    .links-grid a {
+        font-family: 'GMG';
+        font-size: 17px;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+    .links-grid a.term {
+        font-family: 'MikadooLight';
+    }
+
     .footer {
         position: relative;
         z-index: 2;
@@ -347,18 +469,21 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        gap: 4.444vw;
-        padding: 2.222vw;
+        gap: 64px;
+        padding: 32px;
     }
+
     .footer .logo {
         width: 10.69vw;
         height: 4.9vw;
     }
+
     .copyright {
         font-family: 'MikadooLight';
-        font-size: 0.694vw;
+        font-size: 10px;
         color: #9F9F9F;
     }
+
     .burger-container {
         width: 100%;
         height: 100vh;
@@ -379,10 +504,10 @@
     }
     .burger {
         position: absolute;
-        top: 4%;
-        right: 5%;
-        width: 29px;
-        height: 25px;
+        top: 5vw;
+        right: 6%;
+        width: 49px;
+        height: 35px;
         gap: 5px;
         z-index: 2001;
         display: none;
@@ -393,8 +518,8 @@
     }
 
     .burger .line {
-        width: 29px;
-        height: 5px;
+        width: 49px;
+        height: 15px;
         border-radius: 17px;
         background: white;
     }
@@ -403,6 +528,59 @@
             width: 30vw;
             height: 15vw;
         }
+        .contacts {
+            width: 100%;
+            height: 100vw;
+        }
+
+        .footer .logo {
+            width: 25vw;
+            height: auto;
+        }
+
+        .copyright {
+            font-family: 'MikadooLight';
+            font-size: 2vw;
+            color: #9F9F9F;
+        }
+
+        .email {
+            margin: 0 0 12vw 0;
+            font-size: 3vw;
+            font-weight: bold;
+        }
+
+        .social {
+            top: 47%;
+            gap: 16px;
+        }
+
+        .social-grid .item {
+            width: 6vw;
+            height: 6vw;
+            border: 1px solid #FFFFFF;
+            border-radius: 50%;
+        }
+
+        .social-grid{
+            gap: 8.3vw;
+        }
+
+        .links {
+            top: 75%;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .links-grid{
+            margin: 0;
+            gap: 7vw
+        }
+        .links-grid a{
+            font-size: 3vw;
+        }
+
+
         header .nav {
             display: none;
         }
@@ -412,16 +590,21 @@
         }
         .game {
             width: 100%;
-            height: auto;
+            height: fit-content;
+            padding: 40px 0;
+            display: flex;
+            justify-content: space-around;
         }
         .game .info .description{
             font-family: 'MikadooLight';
             font-size: 3.5vw;
             line-height: 100%;
+            width: 30vw;
+
         }
         .game .info .stores{
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             gap: 16px;
         }
         .game .info .stores img{
@@ -436,28 +619,15 @@
             color: #000000;
             text-decoration: underline;
         }
-        .email{
-            display: none;
+
+        .games-container{
+            margin-bottom: 0;
         }
-        .links-grid {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 16px;
-            margin-left: 3vw;
+        .game .image-container img{
+            height: 84vw;
+            width: auto;
         }
-        .links-grid a {
-            font-size: 3vw;
-        }
-        .footer .logo{
-            width: 154px;
-            height: 71px;
-        }
-        .copyright{
-            font-family: 'MikadooLight';
-            font-size: 10px;
-            color: #9F9F9F;
-        }
+
         header .nav{
             display: none;
         }
@@ -476,9 +646,9 @@
         .nav button, .send-CV-button {
             font-family: 'GMG';
             font-weight: bold;
-            font-size: 18px;
-            width: 132px;
-            padding: 10px;
+            font-size: 3vw;
+            width: 22vw;
+            padding: 2vw;
             border-radius: 51px;
             color: #ffffff;
             text-decoration: none;
@@ -499,6 +669,82 @@
         .adaptive-button-container {
             display: flex;
         }
+        .container::before {
+            border: 2px solid white;
+            border-radius: 20px;
+            z-index: 2;
+            height: 180vw;
+        }
     }
 
 </style>
+<script>
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+        if (document.getElementById('burger')) {
+            document.getElementById('burger').addEventListener('click', function () {
+                var container = document.getElementById('burgerContainer');
+                container.classList.toggle('active');
+
+                if (container.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    console.log('none');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        // Изменяем тему в локальном хранилище
+        const overlay = document.querySelector('.overlay');
+
+        function setTheme(theme) {
+            if (document.body) {
+                if (theme === 'dark') {
+                    document.body.classList.add('dark');
+                    overlay.classList.add('dark');
+                    document.body.classList.remove('light');
+                    overlay.classList.remove('light');
+                } else {
+                    document.body.classList.add('light');
+                    overlay.classList.add('light');
+                    document.body.classList.remove('dark');
+                    overlay.classList.remove('dark');
+                }
+
+                localStorage.setItem('theme', theme);
+            } else {
+                console.error("Body element not found");
+            }
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        }
+
+        window.addEventListener('beforeunload', function () {
+            const currentTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', currentTheme);
+        });
+
+
+        // Изменяем картинки в зависимости от темы
+        function updateImage() {
+            var theme = localStorage.getItem("theme");
+            if (theme === "dark") {
+                document.getElementById("footerImage2").src = "img/blueImage.png"
+            } else {
+                document.getElementById("footerImage2").src = "img/orangeImage.png"
+            }
+        }
+
+        updateImage();
+
+        setInterval(function () {
+            updateImage();
+        }, 1);
+    });
+</script>

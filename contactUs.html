@@ -20,7 +20,7 @@
   <div class="background"></div>
   <div class="overlay"></div>
   <header>
-    <a href="index.html">
+    <a href="index.html" class="logo-container">
       <img src="img/main.png" alt="">
     </a>
     <div class="nav">
@@ -29,6 +29,18 @@
       <div class="nav-link"><a href="index.html#careers">Careers</a></div>
     </div>
   </header>
+  <div class="burger" id="burger">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+  <div class="burger-container" id="burgerContainer">
+    <div class="nav adaptive">
+      <button><a href="index.html#second">ABOUT US</a></button>
+      <button><a href="games.html" class="external-link">GAMES</a></button>
+      <button><a href="index.html#careers">CAREERS</a></button>
+    </div>
+  </div>
   <div class="games-container">
     <div class="game">
       <div class="info">
@@ -72,33 +84,38 @@
       <a href="cookie.html" class="term">Cookie Policy</a>
     </div>
     <span class="email">
-                support@gmg.studio
+      support@gmg.studio
     </span>
   </div>
 </div>
 <div class="footer">
   <img src="img/main.png" class="logo">
   <span class="copyright">
-            Copyright @ 2024 - GMG
+    Copyright @ 2024 - GMG
   </span>
 </div>
 </body>
 </html>
 <style>
-  .text-text{
-    display: flex;
-    justify-content: space-between;
-    width: 40vw;
-    margin-bottom: 1vw;
-  }
   p{
     margin: 70px 0;
   }
 
   .text{
+    width: 100%;
     display: flex;
     flex-direction: column;
     font-size: 1.5em;
+    align-items: center;
+    justify-content: center;
+  }
+  .text-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 650px;
+    margin-bottom: 1vw;
+    text-align: center;
   }
 
   .email a {
@@ -234,7 +251,7 @@
     margin-bottom: 6.944vw;
   }
 
-  header a {
+  header .logo-container{
     position: relative;
     top: 7.8%;
     left: 5.6%;
@@ -297,20 +314,10 @@
   }
 
   .game .info {
+    width: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
-
-  }
-
-  .game .info .logo {
-    width: fit-content;
-    height: 6.528vw;
-  }
-
-  .game .info .logo img {
-    width: 100%;
-    height: 100%;
   }
 
   .game .info .description {
@@ -418,7 +425,48 @@
     font-size: 0.694vw;
     color: #9F9F9F;
   }
+  .burger-container {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    position: fixed;
+    z-index: 2000;
+    background: #FF750691;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+  }
 
+  body.light .burger-container {
+    background: #FF750691;
+  }
+
+  body.dark .burger-container {
+    background: #14185fc7;
+  }
+
+  .burger {
+    position: absolute;
+    top: 5vw;
+    right: 6%;
+    width: 49px;
+    height: 35px;
+    gap: 5px;
+    z-index: 2001;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .burger .line {
+    width: 49px;
+    height: 15px;
+    border-radius: 17px;
+    background: white;
+    box-shadow: 0px 4px 4px 0px #0000001C;
+  }
   @media (max-width: 1330px) {
     header img {
       width: 30vw;
@@ -437,6 +485,9 @@
     .game {
       width: 100%;
       height: auto;
+      padding: 0 60px;
+      display: block;
+      box-sizing: border-box;
     }
 
     .game .info .description {
@@ -490,6 +541,71 @@
       font-family: 'MikadooLight';
       font-size: 10px;
       color: #9F9F9F;
+    }
+
+    .burger {
+      display: flex;
+    }
+
+    .nav.adaptive {
+      display: flex;
+      position: relative;
+      top: initial;
+      left: initial;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+    }
+
+    .nav button,
+    .send-CV-button {
+      font-family: 'GMG';
+      font-weight: bold;
+      font-size: 3vw;
+      width: 22vw;
+      padding: 2vw;
+      border-radius: 51px;
+      color: #ffffff;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid white;
+      overflow: hidden;
+    }
+
+    .burger-container.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .adaptive-button-container {
+      display: flex;
+    }
+
+    .container::before {
+      border: 2px solid white;
+      border-radius: 20px;
+      z-index: 2;
+    }
+    .text{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+      align-items: center;
+      justify-content: center;
+    }
+    .text-text{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 16px;
+    }
+    p{
+      width: 100%;
+      margin: 35px 0;
     }
   }
 
